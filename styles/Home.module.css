@@ -1,116 +1,337 @@
 .container {
-  padding: 0 2rem;
+  width: 100%;
+  background: url("/whaterMarkGroup.png") fixed top center no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 1px;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+
+.hero {
+  width: 100%;
+  margin-top: 120px;
+  padding-bottom: 100px;
+  display: flex;
+  position: relative;
+}
+
+
+.mainContent {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  justify-content: center;
+  color: white;
+}
+
+.mainContentForm {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContentForm input {
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  padding: 15px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  box-shadow: inset 0px 4px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.mainContentForm button {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.mainContent h5 {
+  width: 100%;
+  font-weight: normal;
+  margin: 20px 0px;
+}
+
+.mainContent a {
+  width: max-content;
+}
+
+
+
+
+.statistics {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 190px;
+  height: 203px;
+  position: relative;
+}
+
+.merroirBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+  border: 1px solid #060940;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
-.footer {
+.bgCircle {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--btn-color);
+  z-index: 1;
+}
+
+@media only screen and (max-width: 800px) {
+  .hero {
+    display: block;
+    margin-top: 80px;
+  }
+  .statistics {
+    margin: 0 auto;
+  }
+  .box {
+    width: 170px;
+    height: 183px;
+    position: relative;
+  }
+  .merroirBox {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .mainContentForm {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .mainContent {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .mainContent h4 {
+    margin: 25px auto;
+  }
+  .mainContent a {
+    margin: 0 auto;
+  }
+}
+
+
+/* ======================================== */
+
+
+.merroirBoxMain {
+  width: 700px;
+  margin: 50px auto;
+  padding: 25px 40px;
+  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+  border: 1px solid #060940;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
+  color: white;  
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.merroirBoxMain h5 {
+  margin: 30px 0;
+  font-family: var(--font-familyCormorant);
 }
 
-.code {
-  background: #fafafa;
+.merroirBoxMain button {
+  padding: 20px 25px;
   border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@media only screen and (max-width: 700px) {
+  .merroirBoxMain {
+    width: 90%;
   }
+}
+
+
+.contacts {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+}
+
+@media only screen and (max-width: 580px) {
+  .contacts {
+    justify-content: center;
+  }
+}
+
+.socialMedia {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;  
+}
+
+.container main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectsTypes {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px auto;
+}
+
+.type1 {
+  position: relative;
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
+.merroirBoxProject {
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px);
+  position: block;
+  border-radius: 5px;
+}
+
+
+
+.projectsTypes .merroirBoxProject:nth-child(3) {
+  border: 1px solid ;
+}
+
+.projectsTypes p {
+  margin-left: 10px;
+}
+
+
+.projectsContainer {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px auto;
+}
+
+@media only screen and (max-width: 750px) {
+  .projectsContainer {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .projectsContainer {
+    justify-content: center;
+  }
+}
+
+.projectsContainer .merroirBoxProject {
+  width: 255px;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  margin: 10px 0;
+}
+
+.projectsContainer .merroirBoxProject p {
+  margin: 20px 0 0 0;
+  font-family: var(--font-familyCormorant);
+}
+
+.showMoreBtn {
+  width: max-content;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+
+
+.customersContainer {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  margin: 200px auto;
+  width: 85%;
+  padding: 50px 0;
+}
+
+.slider {
+  display: flex;
+}
+
+.slider .box {
+  width: 370px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.slider .box .merroirBox {
+  padding: 30px 20px 20px 20px;
+}
+
+.customersImg {
+  width: 70px;
+  height: 70px;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  z-index: 6;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.slider .box .bgCircle {
+  width: 320px;
+  border-radius: 0;
 }
