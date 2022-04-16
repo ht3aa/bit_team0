@@ -116,9 +116,15 @@
     width: 80%;
     margin: 0 auto;
   }
+  .bgCircle {
+    width: 65px;
+    height: 65px;    
+  }
   .box {
-    width: 170px;
+    width: 100px;
+    height: 143px;
     position: relative;
+    text-align: center;
   }
   .merroirBox {
     width: 100%;
