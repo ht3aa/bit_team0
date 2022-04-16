@@ -113,11 +113,11 @@
     margin-top: 80px;
   }
   .statistics {
+    width: 80%;
     margin: 0 auto;
   }
   .box {
     width: 170px;
-    height: 183px;
     position: relative;
   }
   .merroirBox {
@@ -194,6 +194,7 @@
 
 @media only screen and (max-width: 580px) {
   .contacts {
+      width: 80%;
     justify-content: center;
   }
 }
@@ -221,7 +222,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 100px auto;
+  margin: 100px auto 0px auto;
 }
 
 .type1 {
@@ -259,7 +260,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 100px auto;
+  margin: 100px auto 50px auto;
 }
 
 @media only screen and (max-width: 750px) {
@@ -299,13 +300,14 @@
   display: flex;
   width: 100%;
   overflow: hidden;
-  margin: 200px auto;
+  margin: 100px auto 30px auto;
   width: 85%;
   padding: 50px 0;
 }
 
 .slider {
   display: flex;
+  transition: all 0.5s ease-in-out;
 }
 
 .slider .box {
@@ -314,8 +316,10 @@
   position: relative;
 }
 
+
+
 .slider .box .merroirBox {
-  padding: 30px 20px 20px 20px;
+  padding: 1.875rem 1.25rem 1.25rem 1.25rem;
 }
 
 .customersImg {
@@ -330,8 +334,29 @@
   border-radius: 50%;
   overflow: hidden;
 }
+@media only screen and (max-width: 800px) {
+  .slider .box .merroirBox {
+    margin-top: 0;
+    text-align: center;
+    padding: 0 50px;
+  }
+}
 
 .slider .box .bgCircle {
   width: 320px;
   border-radius: 0;
+}
+
+
+.btnGroup {
+  width: 200px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnGroup button {
+  padding: 15px 20px;
+  border-radius: 10px;
 }

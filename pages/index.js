@@ -4,10 +4,14 @@ import statisticNumber from '../globalFunctions/statisticNumber';
 import { useEffect } from 'react';
 import Image from 'next/dist/client/image';
 import aboutUsStyles from "../styles/AboutUs.module.css";
+import { forward, backward } from '../globalFunctions/slider';
+
+
 export default function Home() {
 
   const statisticNumberElement = useRef();
-
+  const sliderRef = useRef();
+  
   useEffect(() => {
     statisticNumber(statisticNumberElement.current);
   }, [])
@@ -111,14 +115,6 @@ export default function Home() {
             <div className={homeStyles.merroirBoxProject + " programmingPrj"}></div>
             <p>Programming projects</p>
           </div>
-          <div className={homeStyles.type1}>
-            <div  className={homeStyles.merroirBoxProject + " arduinoPrj"}></div>
-            <p>Arduino projects</p>
-          </div>
-          <div className={homeStyles.type1}>
-            <div className={homeStyles.merroirBoxProject + " designPrj"}></div>
-            <p>Design projects</p>
-          </div>
         </div>
         <div className={homeStyles.projectsContainer}>
           <div className={homeStyles.merroirBoxProject + " designPrj"}>
@@ -143,7 +139,7 @@ export default function Home() {
         <button className={homeStyles.showMoreBtn}>Show more</button>
       </main>
       <div className={homeStyles.customersContainer}>
-        <div className={homeStyles.slider}>
+        <div ref={sliderRef} className={homeStyles.slider}>
           <div className={homeStyles.box}>
             <div className={homeStyles.customersImg}>
               <Image src={"/me.jpg"} alt="instagram" width="100%" height="100%"/>
@@ -153,8 +149,75 @@ export default function Home() {
             </div>
             <div className={homeStyles.bgCircle}></div>
           </div>
+                    <div className={homeStyles.box}>
+            <div className={homeStyles.customersImg}>
+              <Image src={"/me.jpg"} alt="instagram" width="100%" height="100%"/>
+            </div>
+            <div className={homeStyles.merroirBox}>
+              <p><b>Bob says:</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make  </p>
+            </div>
+            <div className={homeStyles.bgCircle}></div>
+          </div>
+                    <div className={homeStyles.box}>
+            <div className={homeStyles.customersImg}>
+              <Image src={"/me.jpg"} alt="instagram" width="100%" height="100%"/>
+            </div>
+            <div className={homeStyles.merroirBox}>
+              <p><b>Bob says:</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make  </p>
+            </div>
+            <div className={homeStyles.bgCircle}></div>
+          </div>
+                    <div className={homeStyles.box}>
+            <div className={homeStyles.customersImg}>
+              <Image src={"/me.jpg"} alt="instagram" width="100%" height="100%"/>
+            </div>
+            <div className={homeStyles.merroirBox}>
+              <p><b>Bob says:</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make  </p>
+            </div>
+            <div className={homeStyles.bgCircle}></div>
+          </div>
+                    <div className={homeStyles.box}>
+            <div className={homeStyles.customersImg}>
+              <Image src={"/me.jpg"} alt="instagram" width="100%" height="100%"/>
+            </div>
+            <div className={homeStyles.merroirBox}>
+              <p><b>Bob says:</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make  </p>
+            </div>
+            <div className={homeStyles.bgCircle}></div>
+          </div>
+
+                    <div className={homeStyles.box}>
+            <div className={homeStyles.customersImg}>
+              <Image src={"/me.jpg"} alt="instagram" width="100%" height="100%"/>
+            </div>
+            <div className={homeStyles.merroirBox}>
+              <p><b>Bob says:</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make  </p>
+            </div>
+            <div className={homeStyles.bgCircle}></div>
+          </div>
+
+                              <div className={homeStyles.box}>
+            <div className={homeStyles.customersImg}>
+              <Image src={"/me.jpg"} alt="instagram" width="100%" height="100%"/>
+            </div>
+            <div className={homeStyles.merroirBox}>
+              <p><b>Bob says:</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make  </p>
+            </div>
+            <div className={homeStyles.bgCircle}></div>
+          </div>
+
+          
         </div>
+        
       </div>
+        <div className={homeStyles.btnGroup}>
+          <button onClick={() => {
+            backward(sliderRef.current);
+          }}><i className="fa-solid fa-arrow-left"></i></button>
+          <button onClick={() => {
+            forward(sliderRef.current);
+          }}><i className="fa-solid fa-arrow-right"></i></button>
+        </div>
       <div id="aboutUs" className={aboutUsStyles.container}>
         <Image src="/me.jpg" width="400" height="400" alt="personal Img"/>
         <div className={aboutUsStyles.content}>

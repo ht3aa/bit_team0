@@ -33,8 +33,7 @@ export default function NavBar() {
     return (
         <div className={navBarStyles.navbar}>
             <div className={navBarStyles.logoBox}>
-                <Image src="/bit_logo.png" alt="Logo" width={50} height={30}/> 
-                <p>bit_team0</p>       
+                <Image src="/bit_logo.png" alt="Logo" width={50} height={30}/>     
             </div>
             <ul ref={ulListRef} onClick={(e) => {
                
