@@ -1,0 +1,83 @@
+.customersContainer {
+  display: flex;
+  overflow: hidden;
+  margin: 100px auto 30px auto;
+  width: 85%;
+  padding: 50px 0;
+}
+
+.slider {
+  display: flex;
+  transition: all 0.5s ease-in-out;
+}
+
+.box {
+  width: 370px;
+  margin-right: 20px;
+  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 3rem 1.25rem 1.25rem 1.25rem;
+}
+
+.customersImg {
+  width: 4.5rem;
+  height: 4.5rem;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+@media only screen and (max-width: 800px) {
+  .slider .box .merroirBox {
+    margin-top: 0;
+    text-align: center;
+    padding: 0 50px;
+  }
+}
+
+.slider .box .bgCircle {
+  width: 320px;
+  border-radius: 0;
+}
+
+.btnGroup {
+  width: 200px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnGroup button {
+  padding: 15px 20px;
+  border-radius: 10px;
+
+}
+
+@media only screen and (max-width: 450px) {
+    .btnGroup {
+        display: none;
+    }
+    .customersContainer {
+        overflow: none;
+    }
+    .slider {
+        width: 100%;
+        flex-direction: column;
+    }
+    .box {
+        width: 100%;
+        margin: 20px 0;
+    }
+}

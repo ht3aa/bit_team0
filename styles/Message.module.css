@@ -1,0 +1,100 @@
+.messageBox {
+  width: 700px;
+  margin: 50px auto;
+  padding: 25px 40px;
+  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+  border: 1px solid #060940;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;  
+  text-align: center;
+}
+
+.messageBox h5 {
+  margin: 30px 0;
+  font-family: var(--font-familyCormorant);
+}
+
+.messageBox button {
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .messageBox {
+    width: 90%;
+  }
+}
+
+
+.contacts {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+}
+
+@media only screen and (max-width: 580px) {
+  .contacts {
+    width: 80%;
+    justify-content: center;
+  }
+}
+
+.box {
+  width: 150px;
+  height: 163px;
+  position: relative;
+}
+
+@media only screen and (max-width: 840px) {
+  .box {
+    width: 100px;
+    height: 113px;
+  }
+}
+
+.socialMediaBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.socialMediaImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;  
+}
+
+@media only screen and (max-width: 800px) {
+  .socialMedia {
+    width: 65px;
+    height: 65px;
+  }
+}

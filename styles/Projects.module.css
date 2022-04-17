@@ -1,0 +1,72 @@
+.projectsTypes {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px auto 0px auto;
+}
+
+.type {
+  position: relative;
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
+.smallBox {
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px);
+  border-radius: 5px;
+}
+
+.projectsTypes p {
+  margin-left: 10px;
+}
+
+
+.projectsContainer {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px auto 50px auto;
+}
+
+@media only screen and (max-width: 750px) {
+  .projectsContainer {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .projectsContainer {
+    justify-content: center;
+  }
+}
+
+.projectsContainer .box {
+    width: 255px;
+    padding: 20px;
+    margin: 10px 0;
+    background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+.projectsContainer .box p {
+  margin: 20px 0 0 0;
+  font-family: var(--font-familyCormorant);
+}
+
+.showMoreBtn {
+  width: max-content;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
