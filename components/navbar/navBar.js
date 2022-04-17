@@ -35,11 +35,12 @@ export default function NavBar() {
             <div className={navBarStyles.logoBox}>
                 <Image src="/bit_logo.png" alt="Logo" width={50} height={30}/>     
             </div>
-            <ul ref={ulListRef} onClick={(e) => {
-               
-            }} className={navBarStyles.navigationList}>
-                <Link href='/#aboutUs'><li><p className={navBarStyles.navigationListParagraph}>About us</p></li></Link>
+            <ul ref={ulListRef} className={navBarStyles.navigationList}>
                 <Link href='/'><li><p className={navBarStyles.navigationListParagraph}>Home</p></li></Link>
+                <Link href='/#ourMessage'><li><p className={navBarStyles.navigationListParagraph}>Our message</p></li></Link>
+                <Link href='/#projects'><li><p className={navBarStyles.navigationListParagraph}>Projects</p></li></Link>
+                <Link href='/#customers'><li><p className={navBarStyles.navigationListParagraph}>Customers</p></li></Link>
+                <Link href='/#aboutUs'><li><p className={navBarStyles.navigationListParagraph}>About us</p></li></Link>
             </ul>
             <div ref={hamContainerRef} className="ham_Container" onClick={toggleHamAndShowHam}>
                     <div className="circle"></div>
@@ -50,8 +51,11 @@ export default function NavBar() {
             </div>
             {showNavigationList && <nav className={navBarStyles.mobileNavigationList}>
                 <ul className={navBarStyles.mobileNavigationListUl}>
-                    <Link href='/'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>الصفحة الرئيسية</p></li></Link>
-                    <Link href='/#aboutUs'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>من نحن</p></li></Link>
+                    <Link href='/'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Home</p></li></Link>
+                    <Link href='/#customers'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Customers</p></li></Link>
+                    <Link href='/#projects'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Projects</p></li></Link>
+                    <Link href='/#ourMessage'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Our message</p></li></Link>
+                    <Link href='/#aboutUs'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>About us</p></li></Link>
                 </ul>
             </nav>}
         </div>

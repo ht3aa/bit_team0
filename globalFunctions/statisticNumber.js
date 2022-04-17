@@ -16,31 +16,31 @@ export default function statisticNumber(element) {
     }, 50)
     const intervalId2 = setInterval(() => {
         element.children[1].children[0].children[0].innerText = statisticNumbers.team++;
-        if(statisticNumbers.team > 3) {
+        if(statisticNumbers.team > 4) {
             clearInterval(intervalId2);
         }
     }, 50)
     const intervalId3 = setInterval(() => {
         element.children[2].children[0].children[0].innerText = statisticNumbers.projects++;
-        if(statisticNumbers.projects > 55) {
+        if(statisticNumbers.projects > 6) {
             clearInterval(intervalId3);
         }
     }, 50)
         const intervalId4 = setInterval(() => {
         element.children[3].children[0].children[0].innerText = statisticNumbers.folowersInstagram++;
-        if(statisticNumbers.folowersInstagram > 22) {
+        if(statisticNumbers.folowersInstagram > 134) {
             clearInterval(intervalId4);
         }
     }, 50)
     const intervalId5 = setInterval(() => {
         element.children[4].children[0].children[0].innerText = statisticNumbers.folowersFacebook++;
-        if(statisticNumbers.folowersFacebook > 43) {
+        if(statisticNumbers.folowersFacebook > 6) {
             clearInterval(intervalId5);
         }
     }, 50)
     const intervalId6 = setInterval(() => {
         element.children[5].children[0].children[0].innerText = statisticNumbers.services++;
-        if(statisticNumbers.services > 77) {
+        if(statisticNumbers.services > 1) {
             clearInterval(intervalId6);
         }
     }, 50)

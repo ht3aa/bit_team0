@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <div className={messageStyles.messageBox}>
+        <div id="ourMessage" className={messageStyles.messageBox}>
           <h2>From Idea to project</h2>
           <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h5>
           <button>Message Us</button>
@@ -120,7 +120,7 @@ export default function Home() {
             </div>
           </a>          
         </div>
-        <div className={projectsStyles.projectsTypes}>
+        <div id="projects" className={projectsStyles.projectsTypes}>
           <div className={projectsStyles.type}>
             <div className={projectsStyles.smallBox + " programmingPrj"}></div>
             <p>Programming projects</p>
@@ -136,7 +136,7 @@ export default function Home() {
         </div>
         <button className={projectsStyles.showMoreBtn}>Show more</button>
       </main>
-      <div className={customersStyles.customersContainer}>
+      <div id="customers" className={customersStyles.customersContainer}>
         <div ref={sliderRef} className={customersStyles.slider}>
           <div className={customersStyles.box}>
             <div className={customersStyles.customersImg}>
@@ -177,12 +177,8 @@ export default function Home() {
       <div id="aboutUs" className={aboutUsStyles.container}>
         <Image src="/me.jpg" width="400" height="400" alt="personal Img"/>
         <div className={aboutUsStyles.content}>
-          <h1>من نحن</h1>
-          <p>أنا الطالب علي محمد سلمان أدرس في جامعة الأمام الكاظم (عليه السلام) قسم هندسة تقنيات الحاسوب. هذا الموقع يهدف الى توفير البيئة التعليمية لبرنامج الأكسل لتجعلك قادر على فهم و تعلم دوال الأكسل بسهولة و بسرعة عن طريق توفير ملفات و فيديوات يتم فيها شرح اساسيات و مبادئ تعلم دوال الأكسل. تم الأشراف من قبل أ.م.د مؤيد حنون سلمان</p>
-          <div>
-              <a href="https://instagram.com/alimuhammed9" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
-              <a href="https://t.me/Ali_M14" target="_blank" rel="noreferrer"><i className="fab fa-telegram"></i></a>
-          </div>
+          <h1>Who are we?</h1>
+          <p>Lorem</p>
         </div>
       </div>
       <footer>&copy; made by @bit_team0</footer>

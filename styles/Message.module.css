@@ -93,6 +93,10 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .socialMediaImg {
+    width: 75px;
+    height: 75px;
+  }
   .socialMedia {
     width: 65px;
     height: 65px;
