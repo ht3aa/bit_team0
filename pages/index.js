@@ -83,7 +83,7 @@ export default function Home() {
       <header id="hero" className={heroStyles.hero}>
         <div className={heroStyles.mainContent}>
           <h1>From idea to Project</h1>
-          <h5>In Bit we have all you need to make your idea comes true</h5>
+          <h5>In Bit, we have all you need to make your idea comes true</h5>
           <form className={heroStyles.mainContentForm} onSubmit={(e) => {
               e.preventDefault();
               handleSumbit(e)
