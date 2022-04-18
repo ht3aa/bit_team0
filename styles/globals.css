@@ -53,7 +53,7 @@ a:focus {
   text-decoration: underline;
 }
 
-input {
+input, textarea {
   outline: none;
 }
 
@@ -78,14 +78,35 @@ button:focus {
   background-color: #512aad;
 }
 
-.programmingPrj {
+.programmingBorder {
   border: 1px solid #00FF19;
 }
+.programmingCustomerColor {
+  color: #00FF19;
+}
+.programmingBg {
+  background-color: #00FF19;
+}
+
 .arduinoPrj {
   border: 1px solid #FF0000;
 }
+.arduinoCustomerColor {
+  color: #FF0000;
+}
+
 .designPrj {
   border: 1px solid #000AFF;
+}
+.designCustomerColor {
+  color: #000AFF;
+}
+
+
+.navigationActive {
+  font-weight: bold;
+  transform: scale(1.05);
+  border-bottom: 2px solid white;
 }
 
 footer {

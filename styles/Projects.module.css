@@ -15,12 +15,8 @@
 }
 
 .smallBox {
-  width: 25px;
-  height: 25px;
-  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(40px);
-  border-radius: 5px;
+  width: 12px;
+  height: 12px;
 }
 
 .projectsTypes p {
@@ -30,11 +26,9 @@
 
 .projectsContainer {
   width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   margin: 100px auto 50px auto;
+  columns: 3;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 750px) {
@@ -42,27 +36,43 @@
     width: 90%;
   }
 }
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 1200px) {
   .projectsContainer {
-    justify-content: center;
+    columns: 2;
   }
 }
-
+@media only screen and (max-width: 860px) {
+  .projectsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 .projectsContainer .box {
-    width: 255px;
-    padding: 20px;
-    margin: 10px 0;
-    background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(40px);
-    border-radius: 20px;
-    text-align: center;
-    color: white;
+  width: 300px;
+  padding: 20px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  break-inside: avoid;
+  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
 }
 
 .projectsContainer .box p {
-  margin: 20px 0 0 0;
-  font-family: var(--font-familyCormorant);
+  margin: 20px 0 ;
+  font-family: var(--font-familyRubik);
+  font-weight: lighter;
+}
+
+.projectBtn {
+  width: max-content;
+  padding: 15px 20px;
+  border-radius: 5px;
 }
 
 .showMoreBtn {
