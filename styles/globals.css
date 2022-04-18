@@ -78,27 +78,27 @@ button:focus {
   background-color: #512aad;
 }
 
-.programmingBorder {
+.greenBorder {
   border: 1px solid #00FF19;
 }
-.programmingCustomerColor {
+.greenColor {
   color: #00FF19;
 }
-.programmingBg {
+.greenBg {
   background-color: #00FF19;
 }
 
-.arduinoPrj {
+.redBorder {
   border: 1px solid #FF0000;
 }
-.arduinoCustomerColor {
+.redColor {
   color: #FF0000;
 }
 
-.designPrj {
+.blueBorder {
   border: 1px solid #000AFF;
 }
-.designCustomerColor {
+.blueColor {
   color: #000AFF;
 }
 

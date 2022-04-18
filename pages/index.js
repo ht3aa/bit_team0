@@ -20,13 +20,16 @@ export default function Home() {
   const [isMobileDevice, setIsMobileDevice] = useState(false);
   const [limitNumberOfVisibileProjects,  setLimitNumberOfVisibileProjects] = useState(6);
   const [limitNumberOfCustomersOpinion,  setLimitNumberOfCustomersOpinion] = useState(3);
+  const [notificationType, setNotificationType] = useState("");
+  const [notificationMessage, setNotificationMessage] = useState("");
+
   const projects = [
-    {id: 0, type: "programmingBorder", title: "Covid-19", description: "(done with the help of Hussein telegram: @Hussein_SH09) In this project, We talk about what is the disease of the Coronavirus and what are the symptoms that will appear on the injured, treatment, and method of prevention. And the most important part is what are the types of vaccines used and available in all the governorates of Iraq, including Baghdad, showing the percentage of infected, recovery, and death cases, and the method of booking to receive the vaccine.", link: null , btnText: "See webiste"},
+    {id: 0, type: "greenBorder", title: "Covid-19", description: "(done with the help of Hussein telegram: @Hussein_SH09) In this project, We talk about what is the disease of the Coronavirus and what are the symptoms that will appear on the injured, treatment, and method of prevention. And the most important part is what are the types of vaccines used and available in all the governorates of Iraq, including Baghdad, showing the percentage of infected, recovery, and death cases, and the method of booking to receive the vaccine.", link: null , btnText: "See webiste"},
 
 
   ]
   const customersOpinion = [
-    {id: 0, type: "programmingCustomerColor", langType: "ar", img: "/manImg.jpg", name: "رأي بشار:", description: `حبيبي حسوني الحمدلله
+    {id: 0, type: "greenColor", langType: "ar", img: "/manImg.jpg", name: "رأي بشار:", description: `حبيبي حسوني الحمدلله
  بخير دام شفت حروف منك مشتاقلك💜
  المشروع حلو وعجب الكل وقنعتهم بـ سمنرات سابقة الحمدلله وانت من تحجي ؏ مهندس حسن لا تگلي اتقيد بكلام 5 اسطر لأن انت عملاق وهالشي قليل بحقك من ناحية التعامل ف گايلك انت عبرت النجومية شغل حلو ومرتب واي فجوات ماكو وحتلو اكو ف ما قصرت وما گلت لا ما اكدر بالعكس حتى امور خارج المشروع سعيت بيها واتواصلت ويا كل الاطراف اتمنالك التوفيق بحياتك العلمية والمهنية يا حبيبي💜💜`},
   ]
@@ -39,12 +42,33 @@ export default function Home() {
   }
   async function handleSumbit(e) {
 
+    for(let i = 0; i < e.target.elements.length - 1; i++) {
+      if(e.target.elements[i].value === "") {
+        setNotificationType("redColor");
+        setNotificationMessage("some fields are empty");
+        return;
+      } 
+    }
+
+    if(!e.target.elements[2].value.includes("@")) {
+      setNotificationType("redColor");
+      setNotificationMessage("A correct email must provied");
+      return;
+    }
     const { data } = await axios.post("/api/sendEmail/", {
       subject: e.target.elements[0].value,  
       message: e.target.elements[1].value,
       customerEmail: e.target.elements[2].value,
     });
-    console.log(data);
+
+    if(data !== "done") {
+      setNotificationType("redColor");
+      setNotificationMessage("something went wrong");
+    } else {
+      setNotificationType("greenColor");
+      setNotificationMessage("email sent to bit successfully, we will contact you as soon as possible");
+    }
+    
   }
   useEffect(() => {
     if(parseInt(screen.width) < 450) {
@@ -68,6 +92,7 @@ export default function Home() {
             <textarea  rows="4" cols="50" placeholder="Project details and contanct information"></textarea>
             <input type="text" placeholder="Your email"/>
             <button>Send</button>
+            <p className={heroStyles.notification + ` ${notificationType}`}>{notificationMessage}</p>
           </form>
         </div>
         <i className="fa-solid fa-arrow-down"></i>
@@ -159,7 +184,7 @@ export default function Home() {
         </div>
         <div id="projects" className={projectsStyles.projectsTypes}>
           <div className={projectsStyles.type}>
-            <div className={projectsStyles.smallBox + " programmingBorder" + " programmingBg"}></div>
+            <div className={projectsStyles.smallBox + " greenBorder" + " greenBg"}></div>
             <p>Programming projects</p>
           </div>
         </div>

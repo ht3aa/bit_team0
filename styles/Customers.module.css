@@ -1,6 +1,5 @@
 .customersContainer {
   display: flex;
-
   overflow: hidden;
   margin: 100px auto 30px auto;
   width: 85%;
@@ -67,6 +66,9 @@
 }
 
 @media only screen and (max-width: 450px) {
+  .customersContainer {
+    margin-top: 50px;
+  }
     .btnGroup {
         display: none;
     }

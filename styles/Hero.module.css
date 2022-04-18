@@ -6,6 +6,9 @@
   position: relative;
 }
 
+.notification {
+  margin-top: 10px;
+}
 
 .mainContent {
   width: 50%;
