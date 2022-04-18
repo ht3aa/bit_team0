@@ -65,8 +65,8 @@
 
 .projectsContainer .box p {
   margin: 20px 0 ;
-  font-family: var(--font-familyRubik);
-  font-weight: lighter;
+  font-weight: 300;
+  font-family: var(--font-family1);
 }
 
 .projectBtn {

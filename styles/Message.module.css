@@ -18,7 +18,8 @@
 
 .messageBox h5 {
   margin: 30px 0;
-  font-family: var(--font-familyCormorant);
+  font-weight: 300;
+  font-family: var(--font-family1);
 }
 
 .messageBox button {

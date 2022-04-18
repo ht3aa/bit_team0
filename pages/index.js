@@ -24,12 +24,12 @@ export default function Home() {
   const [notificationMessage, setNotificationMessage] = useState("");
 
   const projects = [
-    {id: 0, type: "greenBorder", title: "Covid-19", description: "(done with the help of Hussein telegram: @Hussein_SH09) In this project, We talk about what is the disease of the Coronavirus and what are the symptoms that will appear on the injured, treatment, and method of prevention. And the most important part is what are the types of vaccines used and available in all the governorates of Iraq, including Baghdad, showing the percentage of infected, recovery, and death cases, and the method of booking to receive the vaccine.", link: null , btnText: "See webiste"},
+    {id: 0, type: "greenBorder", title: "Covid-19", description: "(done with the help of Hussein telegram: @Hussein_SH09) In this project, We talk about what is the disease of the Coronavirus, symptoms, treatment and method of prevention. showing the percentage of infected, recovery, and death cases, and the method of booking to receive the vaccine.", link: null , btnText: "See webiste"},
 
 
   ]
   const customersOpinion = [
-    {id: 0, type: "greenColor", langType: "ar", img: "/manImg.jpg", name: "رأي بشار:", description: `حبيبي حسوني الحمدلله
+    {id: 0, type: "greenColor", langType: "ar", img: "/manImg.jpg", name: "رأي بشار: ", description: `حبيبي حسوني الحمدلله
  بخير دام شفت حروف منك مشتاقلك💜
  المشروع حلو وعجب الكل وقنعتهم بـ سمنرات سابقة الحمدلله وانت من تحجي ؏ مهندس حسن لا تگلي اتقيد بكلام 5 اسطر لأن انت عملاق وهالشي قليل بحقك من ناحية التعامل ف گايلك انت عبرت النجومية شغل حلو ومرتب واي فجوات ماكو وحتلو اكو ف ما قصرت وما گلت لا ما اكدر بالعكس حتى امور خارج المشروع سعيت بيها واتواصلت ويا كل الاطراف اتمنالك التوفيق بحياتك العلمية والمهنية يا حبيبي💜💜`},
   ]
@@ -144,7 +144,8 @@ export default function Home() {
       <main>
         <div id="ourMessage" className={messageStyles.messageBox}>
           <h2>From Idea to project</h2>
-          <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h5>
+          <h5>Every creative idea that comes to mind has no value if it isn&apos;t documented and transformed into a lived reality. We seize the opportunity to transform ideas into reality. We aim to provide services of various kinds to the public. Provide all your needs
+to make success to your ideas is our goal 💗.</h5>
           <a href="https://wa.me/message/IIQ6HP4HSSATC1" target="_blank" rel="noreferrer"><button>Message Us</button></a>
         </div>
         <div className={messageStyles.contacts}>
@@ -246,8 +247,12 @@ export default function Home() {
       <div id="aboutUs" className={aboutUsStyles.container}>
         <Image src="/company.jpg" width="400" height="400" alt="personal Img"/>
         <div className={aboutUsStyles.content}>
-          <h1>Who are we?</h1>
-          <p>Lorem</p>
+          <h2>Who are we?</h2>
+          <p>
+          4 young people from Iraq set a goal, which is to form a team that provides electronic services and software solutions. The idea of the team stems from a common hobby, because it is the techniques of the virtual world, providing assistance and a love of learning and development. From the University of Technology, Hassan Tahseen 21-years-old a website programmer and team official,
+            Malak Hassan is a 20-years-old medical engineering student at Al-Nahrain University responsible for accounting, human resources, and project management,
+            Zahraa Majeed 20-years-old medical engineering student at the University of Technology responsible for Marketing Officer and Jafar Ali 21-years-old a medical engineering student at the University of Technology responsible for graphic design
+          </p>
         </div>
       </div>
       <footer>&copy; made by @bit_team0</footer>
