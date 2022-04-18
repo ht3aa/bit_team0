@@ -26,10 +26,9 @@ export default function Home() {
 
   ]
   const customersOpinion = [
-    {id: 0, type: "programmingCustomerColor", img: "/me.jpg", name: "hassan", description: "bla bla bla"},
-    {id: 1, type: "programmingCustomerColor", img: "/me.jpg", name: "hassan", description: "bla bla bla"},
-    {id: 2, type: "programmingCustomerColor", img: "/me.jpg", name: "hassan", description: "bla bla bla"},
-    {id: 3, type: "programmingCustomerColor", img: "/me.jpg", name: "hassan", description: "bla bla bla"},
+    {id: 0, type: "programmingCustomerColor", langType: "ar", img: "/manImg.jpg", name: "رأي بشار:", description: `حبيبي حسوني الحمدلله
+ بخير دام شفت حروف منك مشتاقلك💜
+ المشروع حلو وعجب الكل وقنعتهم بـ سمنرات سابقة الحمدلله وانت من تحجي ؏ مهندس حسن لا تگلي اتقيد بكلام 5 اسطر لأن انت عملاق وهالشي قليل بحقك من ناحية التعامل ف گايلك انت عبرت النجومية شغل حلو ومرتب واي فجوات ماكو وحتلو اكو ف ما قصرت وما گلت لا ما اكدر بالعكس حتى امور خارج المشروع سعيت بيها واتواصلت ويا كل الاطراف اتمنالك التوفيق بحياتك العلمية والمهنية يا حبيبي💜💜`},
   ]
 
   function showMoreProjects() {
@@ -183,10 +182,10 @@ export default function Home() {
           {!isMobileDevice && customersOpinion.map(opinion => {
             return (
               <div key={opinion.id} className={customersStyles.box}>
-                <div className={customersStyles.customersImg}>
+                {opinion.img && <div className={customersStyles.customersImg}>
                   <Image src={ opinion.img } alt={ opinion.name } width="100%" height="100%"/>
-                </div>
-                <p><b className={opinion.type}>{ opinion.name } says:</b>{ opinion.description }</p>
+                </div>}
+                <p className={opinion.langType}><b className={opinion.type}>{ opinion.name }</b>{ opinion.description }</p>
               </div>
             )
           })}
@@ -194,10 +193,10 @@ export default function Home() {
           {isMobileDevice && customersOpinion.slice(0, limitNumberOfCustomersOpinion).map(opinion => {
             return (
               <div key={opinion.id} className={customersStyles.box}>
-                <div className={customersStyles.customersImg}>
+              {opinion.img && <div className={customersStyles.customersImg}>
                   <Image src={ opinion.img } alt={ opinion.name } width="100%" height="100%"/>
-                </div>
-                <p><b className={opinion.type}>{ opinion.name } says:</b>{ opinion.description }</p>
+                </div>}
+                <p className={opinion.langType}><b className={opinion.type}>{ opinion.name }</b>{ opinion.description }</p>
               </div>
             )
           })}
@@ -220,7 +219,7 @@ export default function Home() {
       </div>}
 
       <div id="aboutUs" className={aboutUsStyles.container}>
-        <Image src="/me.jpg" width="400" height="400" alt="personal Img"/>
+        <Image src="/company.jpg" width="400" height="400" alt="personal Img"/>
         <div className={aboutUsStyles.content}>
           <h1>Who are we?</h1>
           <p>Lorem</p>

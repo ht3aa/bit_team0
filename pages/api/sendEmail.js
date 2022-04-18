@@ -19,7 +19,7 @@ export default function handler(req, res) {
     let info = await transporter.sendMail({
       from: customerEmail, // sender address
       to: "bitforservices@gmail.com", // list of receivers bitforservices@gmail.com
-      subject: subject, // Subject line
+      subject: subject + ` <${customerEmail}>`, // Subject line
       text: message, // plain text body
     });
 

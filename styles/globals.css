@@ -102,6 +102,10 @@ button:focus {
   color: #000AFF;
 }
 
+.ar {
+  direction: rtl;
+}
+
 
 .navigationActive {
   font-weight: bold;
