@@ -144,8 +144,7 @@ export default function Home() {
       <main>
         <div id="ourMessage" className={messageStyles.messageBox}>
           <h2>From Idea to project</h2>
-          <h5>Every creative idea that comes to mind has no value if it isn&apos;t documented and transformed into a lived reality. We seize the opportunity to transform ideas into reality. We aim to provide services of various kinds to the public. Provide all your needs
-to make success to your ideas is our goal 💗.</h5>
+          <h5>Every creative idea that comes to mind has no value if it isn&apos;t documented and transformed into a lived reality. We seize the opportunity to transform ideas into reality. We aim to provide services of various kinds to the public. The success of your idea and providing the necessary needs for that is our goal 💗.</h5>
           <a href="https://wa.me/message/IIQ6HP4HSSATC1" target="_blank" rel="noreferrer"><button>Message Us</button></a>
         </div>
         <div className={messageStyles.contacts}>
@@ -249,7 +248,7 @@ to make success to your ideas is our goal 💗.</h5>
         <div className={aboutUsStyles.content}>
           <h2>Who are we?</h2>
           <p>
-          4 young people from Iraq set a goal, which is to form a team that provides electronic services and software solutions. The idea of the team stems from a common hobby, because it is the techniques of the virtual world, providing assistance and a love of learning and development. From the University of Technology, Hassan Tahseen 21-years-old a website programmer and team official,
+          4 young people from Iraq set a goal, which is to form a team that provides software solutions. The idea of the team stems from a common hobby, because it is the techniques of the virtual world, providing assistance and a love of learning and development. From the University of Technology, Hassan Tahseen 21-years-old a website programmer and team official,
             Malak Hassan is a 20-years-old medical engineering student at Al-Nahrain University responsible for accounting, human resources, and project management,
             Zahraa Majeed 20-years-old medical engineering student at the University of Technology responsible for Marketing Officer and Jafar Ali 21-years-old a medical engineering student at the University of Technology responsible for graphic design
           </p>
