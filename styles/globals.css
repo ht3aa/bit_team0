@@ -110,6 +110,18 @@ button:focus {
 }
 
 
+.upButton {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 15px 18px;
+  border-radius: 10px;
+}
+
+.upButton i {
+  font-size: 1.5rem;
+}
+
 .navigationActive {
   font-weight: bold;
   transform: scale(1.05);
