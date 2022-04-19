@@ -88,9 +88,9 @@ export default function Home() {
               e.preventDefault();
               handleSumbit(e)
             }}>
-            <input type="text" placeholder="Project name or title"/>
-            <textarea  rows="4" cols="50" placeholder="Project details and contanct information"></textarea>
-            <input type="text" placeholder="Your email"/>
+            <input type="text" placeholder="Enter project name or title"/>
+            <textarea  rows="4" cols="50" placeholder="Enter project details and contanct information"></textarea>
+            <input type="text" placeholder="Enter your email"/>
             <button>Send</button>
             <p className={heroStyles.notification + ` ${notificationType}`}>{notificationMessage}</p>
           </form>
