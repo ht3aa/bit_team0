@@ -60,7 +60,7 @@ input, textarea {
 }
 
 ::placeholder {
-  color: var(--accent2-color);
+  color: var(--btn-color);
 }
 
 button {
