@@ -28,23 +28,24 @@ export default function NavBar() {
         const customers = document.getElementById("customers");
         const aboutUs = document.getElementById("aboutUs");
         let startNewSectionUpNumber = 350;
-        
-        document.addEventListener("scroll", () => {
-            if(customers && projects && ourMessage && aboutUs && parseInt(screen.width) > 650) {
-                removeNavigationActiveClass();  
-                if(window.scrollY + startNewSectionUpNumber < ourMessage.offsetTop) {
-                    ulListRef.current.children[0].children[0].classList.add("navigationActive"); 
-                } else if(window.scrollY + startNewSectionUpNumber > ourMessage.offsetTop && window.scrollY + startNewSectionUpNumber < projects.offsetTop) {
-                    ulListRef.current.children[1].children[0].classList.add("navigationActive"); 
-                } else if(window.scrollY + startNewSectionUpNumber > projects.offsetTop && window.scrollY + startNewSectionUpNumber < customers.offsetTop) {
-                    ulListRef.current.children[2].children[0].classList.add("navigationActive");  
-                } else if(window.scrollY + startNewSectionUpNumber > customers.offsetTop && window.scrollY + startNewSectionUpNumber < aboutUs.offsetTop) {
-                    ulListRef.current.children[3].children[0].classList.add("navigationActive");  
-                } else if(window.scrollY + startNewSectionUpNumber > aboutUs.offsetTop) {
-                    ulListRef.current.children[4].children[0].classList.add("navigationActive"); 
+        if(parseInt(screen.width) > 650) {      
+            document.addEventListener("scroll", () => {
+                if(customers && projects && ourMessage && aboutUs && parseInt(screen.width) > 650) {
+                    removeNavigationActiveClass();  
+                    if(window.scrollY + startNewSectionUpNumber < ourMessage.offsetTop) {
+                        ulListRef.current.children[0].children[0].classList.add("navigationActive"); 
+                    } else if(window.scrollY + startNewSectionUpNumber > ourMessage.offsetTop && window.scrollY + startNewSectionUpNumber < projects.offsetTop) {
+                        ulListRef.current.children[1].children[0].classList.add("navigationActive"); 
+                    } else if(window.scrollY + startNewSectionUpNumber > projects.offsetTop && window.scrollY + startNewSectionUpNumber < customers.offsetTop) {
+                        ulListRef.current.children[2].children[0].classList.add("navigationActive");  
+                    } else if(window.scrollY + startNewSectionUpNumber > customers.offsetTop && window.scrollY + startNewSectionUpNumber < aboutUs.offsetTop) {
+                        ulListRef.current.children[3].children[0].classList.add("navigationActive");  
+                    } else if(window.scrollY + startNewSectionUpNumber > aboutUs.offsetTop) {
+                        ulListRef.current.children[4].children[0].classList.add("navigationActive"); 
+                    }
                 }
-            }
-        })
+            })
+        }
     }, [])
     return (
         <div className={navBarStyles.navbar}>

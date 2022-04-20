@@ -72,7 +72,6 @@ export default function Home() {
   }
   useEffect(() => {
     if(parseInt(screen.width) < 450) {
-      console.log('a')
       setIsMobileDevice(true);
     }
     statisticNumber(statisticNumberElement.current);
