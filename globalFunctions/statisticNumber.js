@@ -10,7 +10,7 @@ export default function statisticNumber(element, childIndex) {
     }
     const intervalId = setInterval(() => {
         element.children[childIndex].children[0].children[0].innerText = statisticNumberCounters[childIndex]++;
-        if(statisticNumberCounters[childIndex] > statisticNumbers[childIndex] - 1) {
+        if(statisticNumberCounters[childIndex] > statisticNumbers[childIndex]) {
             clearInterval(intervalId);
             statisticNumber(element, ++childIndex, statisticNumbers[++childIndex])
         }
