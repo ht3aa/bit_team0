@@ -74,7 +74,7 @@ export default function Home() {
     if(parseInt(screen.width) < 450) {
       setIsMobileDevice(true);
     }
-    statisticNumber(statisticNumberElement.current);
+    statisticNumber(statisticNumberElement.current, 0);
   }, [])
 
   return (
