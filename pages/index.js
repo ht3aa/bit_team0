@@ -5,12 +5,14 @@ import messageStyles from '../styles/Message.module.css';
 import projectsStyles from '../styles/Projects.module.css';
 import customersStyles from '../styles/Customers.module.css';
 import statisticNumber from '../globalFunctions/statisticNumber';
+import bitteam0Styles from "../styles/bitteam0.module.css";
 import { useEffect } from 'react';
 import Image from 'next/dist/client/image';
 import aboutUsStyles from "../styles/AboutUs.module.css";
 import { forward, backward } from '../globalFunctions/slider';
 import { useState } from 'react';
 import axios from 'axios';
+import { customersOpinion, projects } from '../db/db';
 
 
 export default function Home() {
@@ -23,16 +25,6 @@ export default function Home() {
   const [notificationType, setNotificationType] = useState("");
   const [notificationMessage, setNotificationMessage] = useState("");
 
-  const projects = [
-    {id: 0, type: "greenBorder", title: "Covid-19", description: "(done with the help of Hussein telegram: @Hussein_SH09) In this project, We talk about what is the disease of the Coronavirus, symptoms, treatment and method of prevention. showing the percentage of infected, recovery, and death cases, and the method of booking to receive the vaccine.", link: null , btnText: "See webiste"},
-
-
-  ]
-  const customersOpinion = [
-    {id: 0, type: "greenColor", langType: "ar", img: "/manImg.jpg", name: "رأي بشار: ", description: `حبيبي حسوني الحمدلله
- بخير دام شفت حروف منك مشتاقلك💜
- المشروع حلو وعجب الكل وقنعتهم بـ سمنرات سابقة الحمدلله وانت من تحجي ؏ مهندس حسن لا تگلي اتقيد بكلام 5 اسطر لأن انت عملاق وهالشي قليل بحقك من ناحية التعامل ف گايلك انت عبرت النجومية شغل حلو ومرتب واي فجوات ماكو وحتلو اكو ف ما قصرت وما گلت لا ما اكدر بالعكس حتى امور خارج المشروع سعيت بيها واتواصلت ويا كل الاطراف اتمنالك التوفيق بحياتك العلمية والمهنية يا حبيبي💜💜`},
-  ]
 
   function showMoreProjects() {
     setLimitNumberOfVisibileProjects(limitNumberOfVisibileProjects + 6);
@@ -70,6 +62,7 @@ export default function Home() {
     }
     
   }
+
   useEffect(() => {
     if(parseInt(screen.width) < 450) {
       setIsMobileDevice(true);
@@ -252,6 +245,10 @@ export default function Home() {
             Zahraa Majeed 20-years-old medical engineering student at the University of Technology responsible for Marketing Officer and Jafar Ali 21-years-old a medical engineering student at the University of Technology responsible for graphic design
           </p>
         </div>
+      </div>
+      {/* must be refactor */}
+      <div className={bitteam0Styles.bitteam0Conatiner}>
+        <a href="/bit_leader.jpg"><Image src="/bit_leader.jpg" alt="hassan tahseen" width="500" height="500"/></a>
       </div>
       <footer>&copy; made by @bit_team0</footer>
     </div>
