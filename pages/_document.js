@@ -25,9 +25,9 @@ export default function Document() {
         <meta property="og:type" content="article" />
         <meta property="og:image" content="/company.jpg"/>
         <meta property="og:url" content="http://www.bitteam0.com"/>
-        <meta name="title" content="BIT for services"/>
+        <meta name="title" content="From idea to project"/>
         <meta name="author" content="@bit_team0" />
-        <meta name="description" content="'From idea to project' is the title for bit team0. We will help you to bring life to your idea."/>
+        <meta name="description" content="We will help you to bring life to your idea."/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerpolicy="no-referrer" />
       </Head>
       <body>
