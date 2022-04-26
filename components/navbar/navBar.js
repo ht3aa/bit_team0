@@ -23,6 +23,7 @@ export default function NavBar() {
     }
 
     useEffect(() => {
+        const bitteam0 = document.getElementById("bitteam0");
         const ourMessage = document.getElementById("ourMessage");
         const projects = document.getElementById("projects");
         const customers = document.getElementById("customers");
@@ -40,8 +41,10 @@ export default function NavBar() {
                         ulListRef.current.children[2].children[0].classList.add("navigationActive");  
                     } else if(window.scrollY + startNewSectionUpNumber > customers.offsetTop && window.scrollY + startNewSectionUpNumber < aboutUs.offsetTop) {
                         ulListRef.current.children[3].children[0].classList.add("navigationActive");  
-                    } else if(window.scrollY + startNewSectionUpNumber > aboutUs.offsetTop) {
+                    } else if(window.scrollY + startNewSectionUpNumber > aboutUs.offsetTop && window.scrollY + startNewSectionUpNumber < bitteam0.offsetTop) {
                         ulListRef.current.children[4].children[0].classList.add("navigationActive"); 
+                    } else if(window.scrollY + startNewSectionUpNumber > bitteam0.offsetTop) {
+                        ulListRef.current.children[5].children[0].classList.add("navigationActive");
                     }
                 }
             })
@@ -58,6 +61,7 @@ export default function NavBar() {
                 <Link href='/#projects'><li><p className={navBarStyles.navigationListParagraph}>Projects</p></li></Link>
                 <Link href='/#customers'><li><p className={navBarStyles.navigationListParagraph}>Customers</p></li></Link>
                 <Link href='/#aboutUs'><li><p className={navBarStyles.navigationListParagraph}>About us</p></li></Link>
+                <Link href='/#bitteam0'><li><p className={navBarStyles.navigationListParagraph}>bit team</p></li></Link>
             </ul>
             <div ref={hamContainerRef} className="ham_Container" onClick={toggleHamAndShowHam}>
                     <div className="circle"></div>
@@ -69,10 +73,11 @@ export default function NavBar() {
             {showNavigationList && <nav className={navBarStyles.mobileNavigationList}>
                 <ul className={navBarStyles.mobileNavigationListUl}>
                     <Link href='/'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Home</p></li></Link>
-                    <Link href='/#customers'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Customers</p></li></Link>
-                    <Link href='/#projects'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Projects</p></li></Link>
                     <Link href='/#ourMessage'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Our message</p></li></Link>
+                    <Link href='/#projects'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Projects</p></li></Link>
+                    <Link href='/#customers'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Customers</p></li></Link>
                     <Link href='/#aboutUs'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>About us</p></li></Link>
+                    <Link href='/#bitteam0'><li><p className={navBarStyles.navigationListParagraph}>bit team</p></li></Link>
                 </ul>
             </nav>}
         </div>
