@@ -1,20 +1,40 @@
 .bitteam0Conatiner {
-    width: 70%;
-    margin: 60px auto 50px auto;
-    columns: 2;
-    overflow: hidden;
+  width: 80%;
+  margin: 60px auto 70px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 
+.contact {
+  display: flex;
+  justify-content: space-around;
+}
+.member {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.member i {
+  margin: 15px 0 40px 0;
+  font-size: 2.5rem;
+  color: var(--btn-color);
+  cursor: pointer;
+}
+.member i:hover,
+.member i:focus {
+  color: #512aad;
+}
+
 @media only screen and (max-width: 750px) {
   .bitteam0Conatiner {
-    width: 70%;
-    display: flex;
-    justify-content: center;
+    width: 80%;
   }
 }
 @media only screen and (max-width: 1200px) {
   .bitteam0Conatiner {
-    columns: 1;
+    justify-content: center;
   }
 }
