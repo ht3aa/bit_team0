@@ -20,6 +20,7 @@ export default function Layout({ children }) {
       {showUpButton && <button onClick={() => window.scrollTo(0, 0)} className="upButton">
         <i className="fa-solid fa-arrow-up"></i>
       </button>}
+      
     </>
   )
 }

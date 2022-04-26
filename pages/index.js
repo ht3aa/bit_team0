@@ -1,18 +1,17 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import homeStyles from '../styles/Home.module.css';
 import heroStyles from '../styles/Hero.module.css';
-import messageStyles from '../styles/Message.module.css';
-import projectsStyles from '../styles/Projects.module.css';
 import customersStyles from '../styles/Customers.module.css';
 import statisticNumber from '../globalFunctions/statisticNumber';
-import bitteam0Styles from "../styles/bitteam0.module.css";
-import { useEffect } from 'react';
 import Image from 'next/dist/client/image';
-import aboutUsStyles from "../styles/AboutUs.module.css";
 import { forward, backward } from '../globalFunctions/slider';
-import { useState } from 'react';
 import axios from 'axios';
-import { customersOpinion, projects } from '../db/db';
+import { customersOpinion } from '../db/db';
+import AboutUsContent from '../components/aboutUsContent';
+import StatisticsBoxes from '../components/statisticsBoxes';
+import OurMessage from '../components/ourMessage';
+import Projects from '../components/projects';
+import Bitteam0 from '../components/bitteam0';
 
 
 export default function Home() {
@@ -20,18 +19,14 @@ export default function Home() {
   const statisticNumberElement = useRef();
   const sliderRef = useRef();
   const [isMobileDevice, setIsMobileDevice] = useState(false);
-  const [limitNumberOfVisibileProjects,  setLimitNumberOfVisibileProjects] = useState(6);
   const [limitNumberOfCustomersOpinion,  setLimitNumberOfCustomersOpinion] = useState(3);
   const [notificationType, setNotificationType] = useState("");
   const [notificationMessage, setNotificationMessage] = useState("");
 
-
-  function showMoreProjects() {
-    setLimitNumberOfVisibileProjects(limitNumberOfVisibileProjects + 6);
-  }
   function showMoreCustomersOpinion() {
     setLimitNumberOfCustomersOpinion(limitNumberOfCustomersOpinion + 3);
   }
+
   async function handleSumbit(e) {
 
     for(let i = 0; i < e.target.elements.length - 1; i++) {
@@ -87,115 +82,16 @@ export default function Home() {
             <p className={heroStyles.notification + ` ${notificationType}`}>{notificationMessage}</p>
           </form>
         </div>
-        <i className="fa-solid fa-arrow-down"></i>
         <div ref={statisticNumberElement} className={heroStyles.statistics}>
-          <div className={heroStyles.box}>
-            <div  className={heroStyles.merroirBox}>
-              <h3></h3>
-              <p>Customers</p>
-            </div>
-            <div className={heroStyles.bgCircle}></div>
-          </div>                    
-          <div className={heroStyles.box}>
-            <div className={heroStyles.merroirBox}>
-              <h3></h3>
-              <p>Team Members</p>
-            </div>
-            <div className={heroStyles.bgCircle}></div>
-          </div>                    
-          <div className={heroStyles.box}>
-            <div className={heroStyles.merroirBox}>
-              <h3></h3>
-              <p>Projects</p>
-            </div>
-            <div className={heroStyles.bgCircle}></div>
-          </div>
-          <div className={heroStyles.box}>
-            <div className={heroStyles.merroirBox}>
-              <h3></h3>
-              <p>Followers on Instagram</p>
-            </div>
-            <div className={heroStyles.bgCircle}></div>
-          </div>                    
-          <div className={heroStyles.box}>
-            <div className={heroStyles.merroirBox}>
-              <h3></h3>
-              <p>Followers on Facebook</p>
-            </div>
-            <div className={heroStyles.bgCircle}></div>
-          </div>                    
-          <div className={heroStyles.box}>
-            <div className={heroStyles.merroirBox}>
-              <h3></h3>
-              <p>Services</p>
-            </div>
-            <div className={heroStyles.bgCircle}></div>
-          </div>                    
+          <StatisticsBoxes />
         </div>
       </header>
       <main>
-        <div id="ourMessage" className={messageStyles.messageBox}>
-          <h2>From Idea to project</h2>
-          <h5>Every creative idea that comes to mind has no value if it isn&apos;t documented and transformed into a lived reality. We seize the opportunity to transform ideas into reality. We aim to provide services of various kinds to the public. The success of your idea and providing the necessary needs for that is our goal 💗.</h5>
-          <a href="https://wa.me/message/IIQ6HP4HSSATC1" target="_blank" rel="noreferrer"><button>Message Us</button></a>
-        </div>
-        <div className={messageStyles.contacts}>
-          <a href='https://instagram.com/bit_team0' target="_blank" rel="noreferrer">
-            <div className={messageStyles.box}>
-              <div className={messageStyles.socialMediaBox}>
-                <h3></h3>
-                <p>Instagram</p>
-              </div>
-              <div className={messageStyles.socialMediaImg}>
-                <Image src={"/instagram.png"} alt="instagram" width="100%" height="100%"/>
-              </div>
-            </div>
-          </a>
-          <a href="https://www.facebook.com/BIT-for-services-106050172059404/" target="_blank" rel="noreferrer">
-            <div className={messageStyles.box}>
-              <div className={messageStyles.socialMediaBox}>
-                <h3></h3>
-                <p>Facebook</p>
-              </div>
-              <div className={messageStyles.socialMediaImg}>
-                <Image src={"/facebook.png"} alt="facebook" width="100%" height="100%"/>
-              </div>
-            </div>
-          </a>
-          <a href="https://twitter.com/bit_team0?t=XSM8Of7E12p4lHC3o_X0cw&s=09" target="_blank" rel="noreferrer">
-            <div className={messageStyles.box}>
-              <div className={messageStyles.socialMediaBox}>
-                <h3></h3>
-                <p>Twitter</p>
-              </div>
-              <div className={messageStyles.socialMediaImg}>
-                <Image src={"/twitter.png"} alt="twitter" width="100%" height="100%"/>
-              </div>
-            </div>
-          </a>          
-        </div>
-        <div id="projects" className={projectsStyles.projectsTypes}>
-          <div className={projectsStyles.type}>
-            <div className={projectsStyles.smallBox + " greenBorder" + " greenBg"}></div>
-            <p>Programming projects</p>
-          </div>
-        </div>
-        <div className={projectsStyles.projectsContainer}>
-          {projects.slice(0, limitNumberOfVisibileProjects).map(project => {
-            return (
-              <div key={ project.id } className={projectsStyles.box + ` ${ project.type }`}>
-                <h3>{ project.title }</h3>
-                <p>{ project.description }</p>
-                {project.link && <button className={projectsStyles.projectBtn}>{ project.btnText }</button>}
-              </div>
-            )
-          })}
-        </div>
-        {projects.length > 6 && limitNumberOfVisibileProjects < projects.length && <button onClick={showMoreProjects} className={projectsStyles.showMoreBtn}>Show more</button>}
+        <OurMessage />
+        <Projects />
       </main>
-      <div id="customers" className={customersStyles.customersContainer}>
+      <section id="customers" className={customersStyles.customersContainer}>
         <div ref={sliderRef} className={customersStyles.slider}>
-
           {!isMobileDevice && customersOpinion.map(opinion => {
             return (
               <div key={opinion.id} className={customersStyles.box}>
@@ -217,11 +113,8 @@ export default function Home() {
               </div>
             )
           })}
-  
         </div>
-        
-
-      </div>
+      </section>
       {isMobileDevice && customersOpinion.length > 3 && limitNumberOfCustomersOpinion < customersOpinion.length && <div className={customersStyles.showMoreBtnContainer}>
         <button onClick={showMoreCustomersOpinion} className={customersStyles.showMoreBtn}>Show more</button>
       </div>}
@@ -235,21 +128,8 @@ export default function Home() {
         }}><i className="fa-solid fa-arrow-right"></i></button>
       </div>}
 
-      <div id="aboutUs" className={aboutUsStyles.container}>
-        <Image src="/company.jpg" width="400" height="400" alt="personal Img"/>
-        <div className={aboutUsStyles.content}>
-          <h2>Who are we?</h2>
-          <p>
-          4 young people from Iraq set a goal, which is to form a team that provides software solutions. The idea of the team stems from a common hobby, because it is the techniques of the virtual world, providing assistance and a love of learning and development. From the University of Technology, Hassan Tahseen 21-years-old a website programmer and team official,
-            Malak Hassan is a 20-years-old medical engineering student at Al-Nahrain University responsible for accounting, human resources, and project management,
-            Zahraa Majeed 20-years-old medical engineering student at the University of Technology responsible for Marketing Officer and Jafar Ali 21-years-old a medical engineering student at the University of Technology responsible for graphic design
-          </p>
-        </div>
-      </div>
-      {/* must be refactor */}
-      <div className={bitteam0Styles.bitteam0Conatiner}>
-        <a href="/bit_leader.jpg"><Image src="/bit_leader.jpg" alt="hassan tahseen" width="500" height="500"/></a>
-      </div>
+      <AboutUsContent />
+      <Bitteam0 />
       <footer>&copy; made by @bit_team0</footer>
     </div>
   )
