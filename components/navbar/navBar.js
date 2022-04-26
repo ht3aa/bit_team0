@@ -77,7 +77,7 @@ export default function NavBar() {
                     <Link href='/#projects'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Projects</p></li></Link>
                     <Link href='/#customers'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Customers</p></li></Link>
                     <Link href='/#aboutUs'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>About us</p></li></Link>
-                    <Link href='/#bitteam0'><li><p className={navBarStyles.navigationListParagraph}>bit team</p></li></Link>
+                    <Link href='/#bitteam0'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>bit team</p></li></Link>
                 </ul>
             </nav>}
         </div>
