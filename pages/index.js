@@ -94,7 +94,7 @@ export default function Home() {
         <div ref={sliderRef} className={customersStyles.slider}>
           {!isMobileDevice && customersOpinion.map(opinion => {
             return (
-              <div key={opinion.id} className={customersStyles.box}>
+              <div key={opinion.id} className={customersStyles.box + " defaultMerrioBox"}>
                 {opinion.img && <div className={customersStyles.customersImg}>
                   <Image src={ opinion.img } alt={ opinion.name } width="100%" height="100%"/>
                 </div>}
@@ -105,7 +105,7 @@ export default function Home() {
 
           {isMobileDevice && customersOpinion.slice(0, limitNumberOfCustomersOpinion).map(opinion => {
             return (
-              <div key={opinion.id} className={customersStyles.box}>
+              <div key={opinion.id} className={customersStyles.box + " defaultMerrioBox"}>
               {opinion.img && <div className={customersStyles.customersImg}>
                   <Image src={ opinion.img } alt={ opinion.name } width="100%" height="100%"/>
                 </div>}

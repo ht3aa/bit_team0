@@ -14,15 +14,6 @@
 .box {
   width: 370px;
   margin-right: 20px;
-  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(40px);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
   padding: 3rem 1.25rem 1.25rem 1.25rem;
 }
 
@@ -69,21 +60,21 @@
   .customersContainer {
     margin-top: 50px;
   }
-    .btnGroup {
-        display: none;
-    }
-    .customersContainer {
-        overflow: none;
-        margin-bottom: 0;
-    }
-    .slider {
-        width: 100%;
-        flex-direction: column;
-    }
-    .box {
-        width: 100%;
-        margin: 20px 0;
-    }
+  .btnGroup {
+    display: none;
+  }
+  .customersContainer {
+    overflow: none;
+    margin-bottom: 0;
+  }
+  .slider {
+    width: 100%;
+    flex-direction: column;
+  }
+  .box {
+    width: 100%;
+    margin: 20px 0;
+  }
 }
 
 .showMoreBtnContainer {

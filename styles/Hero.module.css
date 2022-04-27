@@ -53,9 +53,6 @@
   width: max-content;
 }
 
-
-
-
 .statistics {
   width: 50%;
   display: flex;
@@ -77,17 +74,6 @@
   z-index: 2;
   top: 0;
   left: 0;
-  background: linear-gradient(143.41deg, rgba(115, 59, 242, 0.33) 22.86%, rgba(115, 59, 242, 0.16) 80.85%);
-  border: 1px solid #060940;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
 }
 
 .bgCircle {
