@@ -51,7 +51,7 @@ export default function NavBar() {
                 }
             })
         }
-    }, [])
+    }, [router.pathname])
     return (
         <div className={navBarStyles.navbar}>
             <div className={navBarStyles.logoBox}>

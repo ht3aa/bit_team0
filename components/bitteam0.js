@@ -1,5 +1,5 @@
 import Image from 'next/dist/client/image';
-import Link from 'next/link';
+import Link from 'next/dist/client/link';
 import bitteam0Styles from "../styles/bitteam0.module.css";
 
 export default function Bitteam0() {
