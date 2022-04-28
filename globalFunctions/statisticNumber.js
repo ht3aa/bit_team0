@@ -1,9 +1,9 @@
 // customers, team members, project, followers on insta, followers on face, services
 const statisticNumbers = [6, 4, 6, 134, 6, 1]
 
-const statisticNumberCounters = [0, 0, 0, 0, 0, 0]
 
 export default function statisticNumber(element, childIndex) {
+    const statisticNumberCounters = [0, 0, 0, 0, 0, 0]
 
     if(childIndex >= statisticNumbers.length) {
         return;

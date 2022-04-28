@@ -5,18 +5,20 @@ import { useRef } from "react";
 import { useState } from "react";
 import Link from "next/dist/client/link";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function NavBar() {
     const [showNavigationList, setShowNavigationList] = useState(false);
     const hamContainerRef = useRef();
     const ulListRef = useRef();
+    const router = useRouter();
 
     function toggleHamAndShowHam() {
         toggleHamAnimation(hamContainerRef.current);
         setShowNavigationList(!showNavigationList);
     }
 
-    function removeNavigationActiveClass() {
+    function removeNavigationActiveClass() {    
         for(let i = 0; i < ulListRef.current.children.length; i++) {
             ulListRef.current.children[i].children[0].classList.remove("navigationActive");
         }
@@ -29,9 +31,9 @@ export default function NavBar() {
         const customers = document.getElementById("customers");
         const aboutUs = document.getElementById("aboutUs");
         let startNewSectionUpNumber = 350;
-        if(parseInt(screen.width) > 650) {      
+        if(parseInt(screen.width) > 650 && router.pathname === '/') {    
             document.addEventListener("scroll", () => {
-                if(customers && projects && ourMessage && aboutUs && parseInt(screen.width) > 650) {
+                if(customers && projects && ourMessage && aboutUs && parseInt(screen.width) > 650 && ulListRef.current !== null) {
                     removeNavigationActiveClass();  
                     if(window.scrollY + startNewSectionUpNumber < ourMessage.offsetTop) {
                         ulListRef.current.children[0].children[0].classList.add("navigationActive"); 

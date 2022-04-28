@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+.main {
+    padding: 60px 20px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    font-family: "Montserrat";
+}
+
+.borderBox {
+    display: flex;
+    border: 2px solid;
+}
+
+.waterMark {
+    width: 1100px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.waterMarkText {
+    display: block;
+    font-size: 250px;
+    font-family: "Arvo";
+    pointer-events: none;
+}
+
+.headerBox {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    padding: 0 15px;
+}
+.headerBox h1 {
+    font-size: 6.25rem;
+    line-height: 100%;
+}
+.headerBox button {
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+
+
+.themeBox {
+    position: absolute;
+    z-index: 4;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+.themeBox span {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.themeBox span:nth-child(1) {
+    background-color: #086492;
+}
+.themeBox span:nth-child(2) {
+    background-color: #010326;
+}
+.themeBox span:nth-child(3) {
+    background-color: #fff;
+}
+@media only screen and (max-width: 500px) {
+    .themeBox {
+        width: 50px;
+        top: 25%;
+        left: 92%;
+        padding: 10px 0;
+        flex-direction: column;
+    }
+    .themeBox span {
+        margin: 10px 0;
+    }
+}
+
+.gobackBox {
+    position: absolute;
+    z-index: 2;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 20px;
+    cursor: pointer;
+}
+.gobackBox i {
+    font-size: 2.5rem;
+}
+@media only screen and (max-width: 500px) {
+    .gobackBox {
+        top: 25%;
+        left: 22px;
+        padding: 20px 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.statisticsBox {
+    position: absolute;
+    z-index: 2;
+    left: 5%;
+    top: 15%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 25px;
+    row-gap: 15px;
+    color: white;
+}
+.statistic span {
+    font-weight: bold;
+    margin-right: 8px;
+    font-size: 1.563rem;
+}
+
+.socialMediaBox {
+    position: absolute;
+    z-index: 2;
+    left: 80%;
+    top: 15%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    row-gap: 10px;
+    color: white; 
+}
+.socialMediaBox i {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.mainContent {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 3;
+}
+.mainContent button {
+    padding: 10px 15px;
+    margin: 10px 0;
+    color: black;
+    background-color: #FB8500;
+}
+.mainContent button:hover,
+.mainContent button:focus {
+    background-color: #9e5502;
+}
+.contentLeft, .contentRight {
+    width: 30%;
+    text-align: center;
+} 
+.contentLeft p, .contentRight p {
+    margin: 6px 0;
+}
+.mainImg {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateY(30px);
+}
+.contentLeft:not(:last-child) div,
+.contentRight div {
+    margin: 0 0 50px 0;
+}
+.contentLeft {
+    padding-left: 50px;
+}
+.contentRight {
+    padding-right: 50px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .mainContent {
+        margin-top: 200px;
+    }
+    .mainImg {
+        display: none;
+    }
+    .contentLeft, .contentRight {
+        width: 45%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .borderBox {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1px;
+    }
+    .statisticsBox {
+        display: none;
+    }
+    .socialMediaBox {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .borderBox {
+        height: auto;
+    }
+    .mainContent {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contentLeft, .contentRight {
+        padding: 0;
+        width: 70%;
+    }
+
+}
