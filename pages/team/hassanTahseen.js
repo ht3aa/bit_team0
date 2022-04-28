@@ -25,14 +25,12 @@ export default function HassanTahseen() {
 
 function selectTheme(target) {
     if(target.nodeName === "SPAN") {
-        const parent = target.parentNode;
 
-        for(let i = 0; i < parent.children.length; i++) {
-            parent.children[i].classList.remove("themeActive");
-        }
-
+        // for(let i = 0; i < themesSpanRef.current.children.length; i++) {
+        //   themesSpanRef.current.children[i].classList.remove("themeActive");
+        // }
         target.classList.add("themeActive");
-        console.log(target.id)
+        
         if(target.id === "blue") {
           setTheme({
             mainBgColor : "#023047",
@@ -143,7 +141,7 @@ function selectTheme(target) {
           <h4>Strong, Kind, Better</h4>
           <button>Call Me</button>
         </header>
-        <div id="themeBox" ref={themesSpanRef} onClick={(e) => selectTheme(e.target, themesSpanRef.current)} className={hassanStyles.themeBox}>
+        <div id="themeBox" ref={themesSpanRef} onClick={(e) => selectTheme(e.target)} className={hassanStyles.themeBox}>
           <span id="blue" className="themeActive"></span>
           <span id="purple"></span>
           <span id="white"></span>
