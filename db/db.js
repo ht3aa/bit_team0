@@ -65,7 +65,7 @@ export const hassanTahseenAbdAlrethaFriendsOpinionEn = [
     {
         id: 0,
         username: "@malakhas",
-        message: "Because he is punctual and can be trusted because he respects work ethics",
+        message: "she says: he is punctual and can be trusted because he respects work ethics",
     },
 ]
 
