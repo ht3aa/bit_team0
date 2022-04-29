@@ -2,6 +2,7 @@ import hassanStyles from "../../styles/team/HassanTahseen.module.css";
 import { useRouter } from 'next/router'
 import { useRef } from "react";
 import { useState } from "react";
+import { hassanTahseenAbdAlrethaCustomersOpinionAr, hassanTahseenAbdAlrethaFriendsOpinionAr, hassanTahseenAbdAlrethaFriendsOpinionEn } from "../../db/db";
 
 export default function HassanTahseen() {
   const navigate = useRouter();
@@ -23,41 +24,21 @@ export default function HassanTahseen() {
     mainContentBtnHoverColor: "#4E28A4",
   })
 
-  const customersOpinion = [`
-    رأي بشار: حبيبي حسوني الحمدلله
-    بخير دام شفت حروف منك مشتاقلك💜
-    المشروع حلو وعجب الكل وقنعتهم بـ سمنرات سابقة الحمدلله وانت من تحجي ؏ مهندس حسن لا تگلي اتقيد بكلام 5 اسطر لأن انت عملاق وهالشي قليل بحقك من ناحية التعامل ف گايلك انت عبرت النجومية شغل حلو ومرتب واي فجوات ماكو وحتلو اكو ف ما قصرت وما گلت لا ما اكدر بالعكس حتى امور خارج المشروع سعيت بيها واتواصلت ويا كل الاطراف اتمنالك التوفيق بحياتك العلمية والمهنية يا حبيبي💜💜
-  `];
-  const friendsOpinion = [`
-    mohfalih1@ في الأنتسغرام يقول: الصراحة أشوفك دتحاول تسوي الأحسن دائما تحاول تطور نفسك التفاصيل و هذا الصح الله يوفقك ان شاء الله.
-    bme.17.050@ في الأنستغرام تقول: شخص طموح يريد يحقق هدف بباله, مو بس هالشي و انما يحب يساعد الغير و يحب يشوفهم مبدعين مثله.
-    0toil@ تقول: شخص طموح.
-    sadiq_allawi@ في الأنستغرام يقول: شخص يدفع الأشخاص الحوالي يقدمون اكثر و اكثر عاشت ايدك يا بطل.
-    masha.23_s@ في الأنستغرام تقول: شخص طموح و ناجح, و عنده اصرار على التنفيذ أذا شي مافهمه او اذا فكرة جديدة عليه.
-    t1b1rk@ في الأنستغرام تقول: شخص طموح.
-    bol6_@ في الأنتسغرام تقول: طموح كلش و دايحفزني اشتغل على نفسي هم.
-    Zahramajeed6@ في التيليكرام تقول: شخص جدي جدا, الفكرة ياخذها و يفكر بيها من كل الجوانب يلا يوافق عليها. القواعد الي مخليها كلش حلوة و منطقية وواقعية. ومهتم بحلمه بشكل كثير.
-    mk5iq@ من الأنستغرام يقول: شخص طموح و الأمور اللي دتسويهن هنه مجرد لعبة بين أديك.
-    _3thmann@ من الأنستغرام يقول: شخص طموح و ديشتغل على نفسه.
-    `]
-  const [customersTextLimt, setCustomersTextLimit] = useState(100);
-  const [friendsTextLimt, setFriendsTextLimit] = useState(100);
+
+
+  const [customersTextLimt, setCustomersTextLimit] = useState(1);
+  const [friendsTextLimt, setFriendsTextLimit] = useState(1);
   
   function showMoreOfCustomerOpinion() {
-    setCustomersTextLimit(customersTextLimt + 200);
+    setCustomersTextLimit(customersTextLimt + 1);
   }
   function showMoreOfFriendsOpinion() {
-    setFriendsTextLimit(friendsTextLimt + 200);
+    setFriendsTextLimit(friendsTextLimt + 1);
   }
 
 function selectTheme(target) {
     if(target.nodeName === "SPAN") {
 
-        // for(let i = 0; i < themesSpanRef.current.children.length; i++) {
-        //   themesSpanRef.current.children[i].classList.remove("themeActive");
-        // }
-        target.classList.add("themeActive");
-        
         if(target.id === "blue") {
           setTheme({
             mainBgColor : "#023047",
@@ -151,6 +132,10 @@ function selectTheme(target) {
         #mainContent {
           color: ${theme.mainContentColor}
         }
+        #mainContent span {
+          color: ${theme.headerBoxH1Color};
+          font-weight: bold;
+        }
         #mainContent button {
           background-color: ${theme.mainContentBtnBgColor};
           color: ${theme.mainContentBtnColor};
@@ -160,6 +145,8 @@ function selectTheme(target) {
           background-color: ${theme.mainContentBtnHoverColor};
         }
       `}</style>
+
+      
       <div id="borderBox" className={hassanStyles.borderBox}>
         <div id="waterMark" className={hassanStyles.waterMark}>
           <span className={hassanStyles.waterMarkText}>Hassan</span>
@@ -171,46 +158,53 @@ function selectTheme(target) {
           <a href="tel:07708246418"><button>Call Me</button></a>
         </header>
         <div id="themeBox" ref={themesSpanRef} onClick={(e) => selectTheme(e.target)} className={hassanStyles.themeBox}>
-          <span id="blue" className="themeActive"></span>
+          <span id="blue"></span>
           <span id="purple"></span>
           <span id="white"></span>
         </div>
         <div id="goBackBox" onClick={() => { navigate.push('/')}} className={hassanStyles.gobackBox}>
           <i  className="fa-solid fa-caret-left"></i>
         </div>
-        {/* <div className={hassanStyles.statisticsBox}>
-          <p className={hassanStyles.statistic}><span>+100</span>project</p>
-          <p className={hassanStyles.statistic}><span>+100</span>project</p>
-          <p className={hassanStyles.statistic}><span>+100</span>project</p>
-          <p className={hassanStyles.statistic}><span>+100</span>project</p>
-          <p className={hassanStyles.statistic}><span>+100</span>project</p>
-          <p className={hassanStyles.statistic}><span>+100</span>project</p>
-        </div> */}
-        {/* <div className={hassanStyles.socialMediaBox}>
-          <i className="fa-brands fa-facebook"></i>
-          <i className="fa-brands fa-instagram"></i>
-          <i className="fa-brands fa-twitter"></i>
-          <i className="fa-brands fa-github"></i>
-          <i className="fa-brands fa-linkedin"></i>
-        </div> */}
         <div id="mainContent" className={hassanStyles.mainContent}>
           <div className={hassanStyles.contentLeft}>
             <div>
-              <h2>Why Hassan?</h2>
-              <p className="ar">{ friendsOpinion[0].substring(0, friendsTextLimt) }</p>
-              {/* <p className="ar">{ friendsOpinion[1].substring(0, friendsTextLimt) }</p> */}
+              <h2>Friends Opinion:</h2>
+              {hassanTahseenAbdAlrethaFriendsOpinionAr.slice(0, friendsTextLimt).map(opinion => {
+                return (
+                  <p key={ opinion.id } className="ar">
+                    <span>{ opinion.username } </span>
+                    { opinion.message }
+                  </p>
+                )
+              })}
+              {hassanTahseenAbdAlrethaFriendsOpinionEn.slice(0, friendsTextLimt).map(opinion => {
+                return (
+                  <p key={ opinion.id }>
+                    <span>{ opinion.username } </span>
+                    { opinion.message }
+                  </p>
+                )
+              })}              
               <button onClick={showMoreOfFriendsOpinion}>Show more</button>
             </div>
             <div>
-              <h2>Trust worthy?</h2>
-              <p className="ar"> { customersOpinion[0].substring(0, customersTextLimt) }</p>
+              <h2>Customers Opinion</h2>
+              {hassanTahseenAbdAlrethaCustomersOpinionAr.slice(0, customersTextLimt).map(opinion => {
+                return (
+                  <p key={ opinion.id } className="ar">
+                    <span>{ opinion.username } </span>
+                    { opinion.message }
+                  </p>
+                )
+              })}   
+
               <button onClick={showMoreOfCustomerOpinion}>Show more</button>
             </div>
           </div>
 
           <div className={hassanStyles.contentRight}>
             <div>
-              <h2>his background?</h2>
+              <h2>His background</h2>
               <p>hassan tahseen abd-alretha, 21 years old, lives in Iraq/Baghdad. student at the university of technology biomedical engineering department. from a family of 4 members, a passion for programming and learning it. allhamdallah.</p>
               <a href="tel:07708246418"><button>Call Me</button></a>
             </div>

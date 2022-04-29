@@ -2,7 +2,6 @@ import { useRef, useState, useEffect } from 'react'
 import homeStyles from '../styles/Home.module.css';
 import heroStyles from '../styles/Hero.module.css';
 import customersStyles from '../styles/Customers.module.css';
-import statisticNumber from '../globalFunctions/statisticNumber';
 import Image from 'next/dist/client/image';
 import { forward, backward } from '../globalFunctions/slider';
 import axios from 'axios';
@@ -76,7 +75,6 @@ export default function Home() {
     if(parseInt(screen.width) < 450) {
       setIsMobileDevice(true);
     }
-    // statisticNumber(statisticNumberElement.current, 0);
   }, [])
 
   return (
