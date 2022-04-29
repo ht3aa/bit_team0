@@ -59,6 +59,16 @@ export const hassanTahseenAbdAlrethaFriendsOpinionAr = [
         username: "_3thmann@",
         message: "من الأنستغرام يقول: شخص طموح و ديشتغل على نفسه.",
     },
+    {
+        id: 10,
+        username: "hiba_saad_25@",
+        message: "من الأنستغرام تقول: شخص طموح.",
+    },
+    {
+        id: 11,
+        username: "a_a_14_@",
+        message: "من الأنستغرام تقول: شخص ديتعب بشي هوه هواية و بنفس الوقت يعرف كلش زين بي مستقبل روعه اذا يتعب بي.",
+    },
 
 ]
 export const hassanTahseenAbdAlrethaFriendsOpinionEn = [
