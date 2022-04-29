@@ -168,7 +168,7 @@ function selectTheme(target) {
           <span id="white"></span>
         </div>
         <div id="goBackBox" onClick={() => { navigate.push('/')}} className={hassanStyles.gobackBox}>
-          <i className="fa-solid fa-caret-left"></i>
+          <i  className="fa-solid fa-caret-left"></i>
         </div>
         {/* <div className={hassanStyles.statisticsBox}>
           <p className={hassanStyles.statistic}><span>+100</span>project</p>
