@@ -7,28 +7,28 @@
 }
 
 
-.contact {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.contact button {
-  padding: 10px 15px;
-}
 .member {
   width: 500px;
   display: flex;
   flex-direction: column;
 }
+.contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+.contact button {
+  padding: 10px 15px;
+}
 
-.member i {
-  margin: 15px 0 40px 0;
+.contact i {
   font-size: 2.5rem;
   color: var(--btn-color);
   cursor: pointer;
 }
-.member i:hover,
-.member i:focus {
+.contact i:hover,
+.contact i:focus {
   color: #512aad;
 }
 
