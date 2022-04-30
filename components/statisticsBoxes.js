@@ -40,7 +40,7 @@ export default function StatisticsBoxes() {
           </div>                    
           <div className={heroStyles.box}>
             <div className={heroStyles.merroirBox + " defaultMerrioBox"}>
-              <h3>1</h3>
+              <h3>3</h3>
               <p>Services</p>
             </div>
             <div className={heroStyles.bgCircle}></div>
