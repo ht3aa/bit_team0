@@ -8,6 +8,7 @@
 
 .slider {
   display: flex;
+  align-items: flex-start;
   transition: all 0.5s ease-in-out;
 }
 
@@ -37,10 +38,6 @@
   }
 }
 
-.slider .box .bgCircle {
-  width: 320px;
-  border-radius: 0;
-}
 
 .btnGroup {
   width: 200px;

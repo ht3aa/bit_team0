@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 import { projects } from '../db/db';
 import projectsStyles from '../styles/Projects.module.css';
@@ -22,7 +23,7 @@ export default function Projects() {
               <div key={ project.id } className={projectsStyles.box + ` ${ project.type }`}>
                 <h3>{ project.title }</h3>
                 <p>{ project.description }</p>
-                {project.link && <button className={projectsStyles.projectBtn}>{ project.btnText }</button>}
+                {project.link && <Link href={ project.link } passHref><button className={projectsStyles.projectBtn}>{ project.btnText }</button></Link>}
               </div>
             )
           })}
