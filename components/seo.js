@@ -4,7 +4,7 @@ const Seo = () => (
   <>
     <NextSeo
       title="From idea to project"
-      description="We will help you bring life to your idea."
+      description="We will help you bring life to your idea. Programming consultant, website building, and logo design that we offer right now."
     />
   </>
 );
