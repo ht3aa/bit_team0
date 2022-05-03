@@ -89,6 +89,9 @@ button:focus {
   background-color: #00FF19;
 }
 
+.redBg {
+  background-color: #FF0000;
+}
 .redBorder {
   border: 1px solid #FF0000;
 }

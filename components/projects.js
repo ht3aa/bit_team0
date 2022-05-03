@@ -13,8 +13,12 @@ export default function Projects() {
     <>
         <section id="projects" className={projectsStyles.projectsTypes}>
           <div className={projectsStyles.type}>
-            <div className={projectsStyles.smallBox + " greenBorder" + " greenBg"}></div>
+            <div className={projectsStyles.smallBox + " greenBg"}></div>
             <p>Programming projects</p>
+          </div>
+          <div className={projectsStyles.type}>
+            <div className={projectsStyles.smallBox + " redBg"}></div>
+            <p>Desing projects</p>
           </div>
         </section>
         <section className={projectsStyles.projectsContainer}>
