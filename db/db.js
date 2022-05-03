@@ -1,7 +1,7 @@
 export const projects = [
     {id: 0, type: "greenBorder", title: "Covid-19", description: "(done with the help of Hussein telegram: @Hussein_SH09) In this project, We talk about what is the disease of the Coronavirus, symptoms, treatment and method of prevention. showing the percentage of infected, recovery, and death cases, and the method of booking to receive the vaccine.", link: null , btnText: "See webiste"},
     {id: 1, type: "greenBorder", title: "Consultation", description: "A consultation talk about how to convert the tables of dry bulb and depression to find the relative humidity and dew point into programming form", link: "/files/consultation.pdf", btnText: "See file"},
-    {id: 2, type: "redBorder", title: "Logo", description: "A creative Logo design that represent the engineer samer.", link: "/imgs/eng_samer.jpg", btnText: "See logo"},
+    {id: 2, type: "redBorder", title: "Logo", description: "A creative logo design that represents the engineer samer.", link: "/imgs/eng_samer.jpg", btnText: "See logo"},
 ]
 
 export const customersOpinion = [
