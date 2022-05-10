@@ -5,7 +5,7 @@ import customersStyles from '../styles/Customers.module.css';
 import Image from 'next/dist/client/image';
 import { forward, backward } from '../globalFunctions/slider';
 import axios from 'axios';
-import { customersOpinion } from '../db/db';
+import Db from '../db/db';
 import AboutUsContent from '../components/aboutUsContent';
 import StatisticsBoxes from '../components/statisticsBoxes';
 import OurMessage from '../components/ourMessage';
@@ -15,7 +15,8 @@ import NavBar from '../components/navbar/navBar';
 
 
 export default function Home() {
-
+  
+  // variables section
   const statisticNumberElement = useRef();
   const sliderRef = useRef();
   const [isMobileDevice, setIsMobileDevice] = useState(false);
@@ -24,11 +25,14 @@ export default function Home() {
   const [notificationMessage, setNotificationMessage] = useState("");
   const [showUpButton, setShowUpButton] = useState(false);
   
+  // functions section
   function showMoreCustomersOpinion() {
     setLimitNumberOfCustomersOpinion(limitNumberOfCustomersOpinion + 3);
   }
 
   async function handleSumbit(e) {
+    e.target.elements[3].setAttribute("disabled", "");
+
     for(let i = 0; i < e.target.elements.length - 1; i++) {
       if(e.target.elements[i].value === "") {
         setNotificationType("redColor");
@@ -51,9 +55,11 @@ export default function Home() {
     if(data !== "done") {
       setNotificationType("redColor");
       setNotificationMessage("something went wrong");
+      e.target.elements[3].removeAttribute("disabled");
     } else {
       setNotificationType("greenColor");
       setNotificationMessage("email sent to bit successfully, we will contact you as soon as possible");
+      e.target.elements[3].removeAttribute("disabled")
     }
     
   }
@@ -66,12 +72,11 @@ export default function Home() {
     }
   }
 
+  // hooks section
   useEffect(() => {
     document.removeEventListener("scroll", upButton);
     document.addEventListener("scroll", upButton);
-  }, [])
 
-  useEffect(() => {
     if(parseInt(screen.width) < 450) {
       setIsMobileDevice(true);
     }
@@ -106,7 +111,7 @@ export default function Home() {
         </main>
         <section id="customers" className={customersStyles.customersContainer}>
           <div ref={sliderRef} className={customersStyles.slider}>
-            {!isMobileDevice && customersOpinion.map(opinion => {
+            {!isMobileDevice && Db.customersOpinion.map(opinion => {
               return (
                 <div key={opinion.id} className={customersStyles.box + " defaultMerrioBox"}>
                   {opinion.img && <div className={customersStyles.customersImg}>
@@ -117,7 +122,7 @@ export default function Home() {
               )
             })}
 
-            {isMobileDevice && customersOpinion.slice(0, limitNumberOfCustomersOpinion).map(opinion => {
+            {isMobileDevice && Db.customersOpinion.slice(0, limitNumberOfCustomersOpinion).map(opinion => {
               return (
                 <div key={opinion.id} className={customersStyles.box + " defaultMerrioBox"}>
                 {opinion.img && <div className={customersStyles.customersImg}>
@@ -129,7 +134,7 @@ export default function Home() {
             })}
           </div>
         </section>
-        {isMobileDevice && customersOpinion.length > 3 && limitNumberOfCustomersOpinion < customersOpinion.length && <div className={customersStyles.showMoreBtnContainer}>
+        {isMobileDevice && Db.customersOpinion.length > 3 && limitNumberOfCustomersOpinion < Db.customersOpinion.length && <div className={customersStyles.showMoreBtnContainer}>
           <button onClick={showMoreCustomersOpinion} className={customersStyles.showMoreBtn}>Show more</button>
         </div>}
 

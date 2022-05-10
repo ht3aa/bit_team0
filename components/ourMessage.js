@@ -2,6 +2,10 @@ import Image from 'next/dist/client/image';
 import messageStyles from '../styles/Message.module.css';
 
 export default function OurMessage() {
+  // variables section
+  // functions section
+  // hooks section
+
   return (
     <>
         <section id="ourMessage" className={messageStyles.messageBox + " defaultMerrioBox"}>

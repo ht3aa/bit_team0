@@ -1,6 +1,11 @@
 import heroStyles from '../styles/Hero.module.css';
 
 export default function StatisticsBoxes() {
+
+  // variables section
+  // functions section
+  // hooks section
+
   return (
     <>
         <div className={heroStyles.box}>

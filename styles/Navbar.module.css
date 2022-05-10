@@ -11,6 +11,10 @@
     justify-content: space-between;
     font-family: var(--font-family1);
 }
+.navbar ul p {
+    color: white;
+    cursor: pointer;
+}
 
 .logoBox {
     display: flex;
@@ -28,10 +32,7 @@
     align-items: center;
     justify-content: space-around;
 }
-.navigationListParagraph {
-    color: white;
-    cursor: pointer;
-}
+
 .navigationListParagraph:hover,
 .navigationListParagraph:focus {
     font-weight: bold;

@@ -1,6 +1,10 @@
 import { NextSeo } from 'next-seo';
 
 const Seo = () => (
+  // variables section
+  // functions section
+  // hooks section
+  
   <>
     <NextSeo
       title="From idea to project"

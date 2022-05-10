@@ -1,19 +1,20 @@
 import navBarStyles from "../../styles/Navbar.module.css";
 import Image from "next/image";
 import toggleHamAnimation from "./hamAnimationController";
-import { useRef } from "react";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/dist/client/link";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function NavBar() {
+
+    // variables section
     const [showNavigationList, setShowNavigationList] = useState(false);
     const hamContainerRef = useRef();
     const ulListRef = useRef();
     const router = useRouter();
 
-    function toggleHamAndShowHam() {
+    // functions section
+    function toggleHamAnimationAndShowNavigationList() {
         toggleHamAnimation(hamContainerRef.current);
         setShowNavigationList(!showNavigationList);
     }
@@ -24,6 +25,7 @@ export default function NavBar() {
         }
     }
 
+    // hooks section
     useEffect(() => {
         const bitteam0 = document.getElementById("bitteam0");
         const ourMessage = document.getElementById("ourMessage");
@@ -51,21 +53,22 @@ export default function NavBar() {
                 }
             })
         }
-    }, [router.pathname])
+    }, [router.pathname]);
+
     return (
         <div className={navBarStyles.navbar}>
             <div className={navBarStyles.logoBox}>
                 <Image src="/bit_logo.png" alt="Logo" width={50} height={30}/>     
             </div>
             <ul ref={ulListRef} className={navBarStyles.navigationList}>
-                <Link href='/'><li><p className={navBarStyles.navigationListParagraph + " navigationActive"}>Home</p></li></Link>
-                <Link href='/#ourMessage'><li><p className={navBarStyles.navigationListParagraph}>Our message</p></li></Link>
-                <Link href='/#projects'><li><p className={navBarStyles.navigationListParagraph}>Projects</p></li></Link>
-                <Link href='/#customers'><li><p className={navBarStyles.navigationListParagraph}>Customers</p></li></Link>
-                <Link href='/#aboutUs'><li><p className={navBarStyles.navigationListParagraph}>About us</p></li></Link>
-                <Link href='/#bitteam0'><li><p className={navBarStyles.navigationListParagraph}>bit team</p></li></Link>
+                <Link href='/'><li><p className="navigationActive">Home</p></li></Link>
+                <Link href='/#ourMessage'><li><p>Our message</p></li></Link>
+                <Link href='/#projects'><li><p>Projects</p></li></Link>
+                <Link href='/#customers'><li><p>Customers</p></li></Link>
+                <Link href='/#aboutUs'><li><p>About us</p></li></Link>
+                <Link href='/#bitteam0'><li><p>bit team</p></li></Link>
             </ul>
-            <div ref={hamContainerRef} className="ham_Container" onClick={toggleHamAndShowHam}>
+            <div ref={hamContainerRef} className="ham_Container" onClick={toggleHamAnimationAndShowNavigationList}>
                     <div className="circle"></div>
                     <div className="ham_4">
                         <div className="middleBar"></div>
@@ -74,12 +77,12 @@ export default function NavBar() {
             </div>
             {showNavigationList && <nav className={navBarStyles.mobileNavigationList}>
                 <ul className={navBarStyles.mobileNavigationListUl}>
-                    <Link href='/'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Home</p></li></Link>
-                    <Link href='/#ourMessage'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Our message</p></li></Link>
-                    <Link href='/#projects'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Projects</p></li></Link>
-                    <Link href='/#customers'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>Customers</p></li></Link>
-                    <Link href='/#aboutUs'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>About us</p></li></Link>
-                    <Link href='/#bitteam0'><li onClick={toggleHamAndShowHam}><p className={navBarStyles.navigationListParagraph}>bit team</p></li></Link>
+                    <Link href='/'><li onClick={toggleHamAnimationAndShowNavigationList}><p>Home</p></li></Link>
+                    <Link href='/#ourMessage'><li onClick={toggleHamAnimationAndShowNavigationList}><p>Our message</p></li></Link>
+                    <Link href='/#projects'><li onClick={toggleHamAnimationAndShowNavigationList}><p>Projects</p></li></Link>
+                    <Link href='/#customers'><li onClick={toggleHamAnimationAndShowNavigationList}><p>Customers</p></li></Link>
+                    <Link href='/#aboutUs'><li onClick={toggleHamAnimationAndShowNavigationList}><p>About us</p></li></Link>
+                    <Link href='/#bitteam0'><li onClick={toggleHamAnimationAndShowNavigationList}><p>bit team</p></li></Link>
                 </ul>
             </nav>}
         </div>

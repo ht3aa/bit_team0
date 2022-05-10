@@ -2,9 +2,11 @@ import hassanStyles from "../../styles/team/HassanTahseen.module.css";
 import { useRouter } from 'next/router'
 import { useRef } from "react";
 import { useState } from "react";
-import { hassanTahseenAbdAlrethaCustomersOpinionAr, hassanTahseenAbdAlrethaFriendsOpinionAr, hassanTahseenAbdAlrethaFriendsOpinionEn } from "../../db/db";
+import Db from "../../db/db";
 
 export default function HassanTahseen() {
+  
+  // variables section
   const navigate = useRouter();
   const themesSpanRef = useRef();
   const [theme, setTheme] = useState({
@@ -23,20 +25,19 @@ export default function HassanTahseen() {
     mainContentBtnBgColor: "#733BF2",
     mainContentBtnHoverColor: "#4E28A4",
   })
-
-
-
-  const [customersTextLimt, setCustomersTextLimit] = useState(1);
-  const [friendsTextLimt, setFriendsTextLimit] = useState(1);
+  const [customersTextLimit, setCustomersTextLimit] = useState(1);
+  const [friendsTextLimit, setFriendsTextLimit] = useState(1);
   
+  
+  // functions section
   function showMoreOfCustomerOpinion() {
-    setCustomersTextLimit(customersTextLimt + 1);
+    setCustomersTextLimit(customersTextLimit + 1);
   }
   function showMoreOfFriendsOpinion() {
-    setFriendsTextLimit(friendsTextLimt + 1);
+    setFriendsTextLimit(friendsTextLimit + 1);
   }
 
-function selectTheme(target) {
+  function selectTheme(target) {
     if(target.nodeName === "SPAN") {
 
         if(target.id === "blue") {
@@ -56,8 +57,6 @@ function selectTheme(target) {
             mainContentBtnBgColor : "#FB8500",
             mainContentBtnHoverColor : "#9e5502"
           })
-          
-          
         } else if (target.id === "purple") {
           setTheme({
             mainBgColor: "#010326",
@@ -96,7 +95,7 @@ function selectTheme(target) {
     }
   }
 
-
+  // hooks section
 
   return (
     <main style={{ backgroundColor: theme.mainBgColor }} className={hassanStyles.main}>
@@ -169,7 +168,7 @@ function selectTheme(target) {
           <div className={hassanStyles.contentLeft}>
             <div>
               <h2>Friends Opinion:</h2>
-              {hassanTahseenAbdAlrethaFriendsOpinionAr.slice(0, friendsTextLimt).map(opinion => {
+              {Db.team0.hassanTahseen.friendsOpinionAr.slice(0, friendsTextLimit).map(opinion => {
                 return (
                   <p key={ opinion.id } className="ar">
                     <span>{ opinion.username } </span>
@@ -177,7 +176,7 @@ function selectTheme(target) {
                   </p>
                 )
               })}
-              {hassanTahseenAbdAlrethaFriendsOpinionEn.slice(0, friendsTextLimt).map(opinion => {
+              {Db.team0.hassanTahseen.friendsOpinionEn.slice(0, friendsTextLimit).map(opinion => {
                 return (
                   <p key={ opinion.id }>
                     <span>{ opinion.username } </span>
@@ -189,7 +188,7 @@ function selectTheme(target) {
             </div>
             <div>
               <h2>Customers Opinion</h2>
-              {hassanTahseenAbdAlrethaCustomersOpinionAr.slice(0, customersTextLimt).map(opinion => {
+              {Db.team0.hassanTahseen.customerOpinonAr.slice(0, customersTextLimit).map(opinion => {
                 return (
                   <p key={ opinion.id } className="ar">
                     <span>{ opinion.username } </span>

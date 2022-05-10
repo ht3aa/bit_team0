@@ -27,9 +27,7 @@ body {
 }
 
 @media only screen and (max-width: 840px) {
-  :root {
-    font-size: 12px;
-  }
+  :root { font-size: 12px; }
 }
 
 
@@ -42,25 +40,15 @@ p { font-size: 1rem; line-height: 140%; }
 label { font-size: 1rem; line-height: 140%; }
 i {font-size: 1.25rem;}
 
-ul {
-  list-style: none;
-}
+ul { list-style: none; }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 a:hover,
-a:focus {
-  text-decoration: underline;
-}
+a:focus { text-decoration: underline; }
 
-input, textarea {
-  outline: none;
-}
+input, textarea { outline: none; }
 
-::placeholder {
-  color: var(--btn-color);
-}
+::placeholder { color: var(--btn-color); }
 
 button {
   font-size: 1rem;
@@ -72,39 +60,19 @@ button {
   font-family: var(--font-family2);
   background-color: var(--btn-color);
 }
-@media only screen and (max-width: 840px) {
-}
 button:hover,
-button:focus {
-  background-color: #512aad;
-}
+button:focus { background-color: #512aad; }
 
-.greenBorder {
-  border: 1px solid #00FF19;
-}
-.greenColor {
-  color: #00FF19;
-}
-.greenBg {
-  background-color: #00FF19;
-}
+.greenBorder { border: 1px solid #00FF19; }
+.greenColor { color: #00FF19; }
+.greenBg { background-color: #00FF19; }
 
-.redBg {
-  background-color: #FF0000;
-}
-.redBorder {
-  border: 1px solid #FF0000;
-}
-.redColor {
-  color: #FF0000;
-}
+.redBg { background-color: #FF0000; }
+.redBorder { border: 1px solid #FF0000; }
+.redColor { color: #FF0000; }
 
-.blueBorder {
-  border: 1px solid #000AFF;
-}
-.blueColor {
-  color: #000AFF;
-}
+.blueBorder { border: 1px solid #000AFF; }
+.blueColor { color: #000AFF; }
 
 .ar {
   direction: rtl;
@@ -119,9 +87,7 @@ button:focus {
   border-radius: 10px;
 }
 
-.upButton i {
-  font-size: 1.5rem;
-}
+.upButton i { font-size: 1.5rem; }
 
 .navigationActive {
   font-weight: bold;
@@ -164,9 +130,7 @@ footer {
   cursor: pointer;
 }
 @media only screen and (max-width: 650px) {
-  .ham_Container {
-    display: flex;
-  }
+  .ham_Container { display: flex; }
 }
 
 .circle {
@@ -217,26 +181,14 @@ footer {
   background-color: white;
   transition: all 0.5s ease-in-out;
 }
-.middleBar::before {
-  transform: translateY(-7px);
-}
-.middleBar::after {
-  transform: translateY(7px);
-}
+.middleBar::before { transform: translateY(-7px); }
+.middleBar::after { transform: translateY(7px); }
 
 /* start animation classes */
-.ham_Container.back .middleBar {
-  transform: translateX(-30.2px);
-}
+.ham_Container.back .middleBar { transform: translateX(-30.2px); }
 
-.ham_Container.setRotate .middleBar::before {
-  transform: rotate(45deg) translate(21px, -21px);    
-}
+.ham_Container.setRotate .middleBar::before { transform: rotate(45deg) translate(21px, -21px); }
 
-.ham_Container.setRotate .middleBar::after {
-  transform: rotate(-45deg) translate(21px, 21px);    
-}
+.ham_Container.setRotate .middleBar::after { transform: rotate(-45deg) translate(21px, 21px); }
 
-.ham_Container.moveHide .hide {
-  transform: translateX(56px);
-} 
+.ham_Container.moveHide .hide { transform: translateX(56px); } 

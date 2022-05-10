@@ -2,6 +2,9 @@ import aboutUsStyles from "../styles/AboutUs.module.css";
 import Image from 'next/dist/client/image';
 
 export default function AboutUsContent() {
+  // variables section
+  // functions section
+  // hooks section
 
   return (
     <section id="aboutUs" className={aboutUsStyles.container}>
