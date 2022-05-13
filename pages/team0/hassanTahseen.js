@@ -1,4 +1,4 @@
-import hassanStyles from "../../styles/team/HassanTahseen.module.css";
+import hassanStyles from "../../styles/team0/HassanTahseen.module.css";
 import { useRouter } from 'next/router'
 import { useRef } from "react";
 import { useState } from "react";
