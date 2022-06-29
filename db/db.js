@@ -35,6 +35,15 @@ export default class Db {
       link: "https://matlab-bag.vercel.app/",
       btnText: "View website",
     },
+    {
+      id: 4,
+      type: "greenBorder",
+      title: "Excel Bag",
+      description:
+        "A bag that contains lectures (pdf files and videos) of how to learn Excel in the easiest simplest way. You also can download the files and preview it within your browser.",
+      link: "https://excel-bag.vercel.app/",
+      btnText: "View website",
+    },
   ];
   static customersOpinion = [
     {
@@ -72,6 +81,14 @@ export default class Db {
       name: "رأي استاذ علي فالح: ",
       description:
         "حبيبي أشكرك على صبرك وياي و تعاملك الحلووو. بالنسبة للمشروع كلش حلو من حيث التطبيقات و التصميم و الله يبارك بيك على كل الجهود الي بذلتها في انجاحه و اتمنالك التوفيق يارب بحياتك المهنية",
+    },
+    {
+      id: 4,
+      type: "greenColor",
+      langType: "ar",
+      img: "/ali_mohammed_salman.jpg",
+      name: "رأي استاذ علي محمد: ",
+      description: "ممتاز، تعامل حلو و شغل مرتب، ينقصنه بعض الفيكات التصميمية",
     },
   ];
   static team0 = {
@@ -172,6 +189,11 @@ export default class Db {
           username: "أستاذ علي فالح: ",
           message:
             "حبيبي أشكرك على صبرك وياي و تعاملك الحلووو. بالنسبة للمشروع كلش حلو من حيث التطبيقات و التصميم و الله يبارك بيك على كل الجهود الي بذلتها في انجاحه و اتمنالك التوفيق يارب بحياتك المهنية",
+        },
+        {
+          id: 2,
+          username: "أستاذ علي محمد: ",
+          message: "ممتاز، تعامل حلو و شغل مرتب، ينقصنه بعض الفيكات التصميمية",
         },
       ],
     },
